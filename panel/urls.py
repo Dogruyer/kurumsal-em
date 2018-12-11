@@ -6,9 +6,77 @@ from django.conf import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^panel$',
+                       url(r'^altkategoriresimtablo$',
+                           'panel.views.altkategoriresimtablo',
+                           name='altkategoriresimtablo'),
+
+                       url(r'^anakategorilertablo$',
+                           'panel.views.anakategorilertablo',
+                           name='anakategorilertablo'),
+
+                       url(r'^anasayfakategoritablo$',
+                           'panel.views.anasayfakategoritablo',
+                           name='anasayfakategoritablo'),
+
+                       url(r'^basicform$',
+                           'panel.views.basicform',
+                           name='basicform'),
+
+                       url(r'^blogtablo$',
+                           'panel.views.blogtablo',
+                           name='blogtablo'),
+
+                       url(r'^footertablo$',
+                           'panel.views.footertablo',
+                           name='footertablo'),
+
+                       url(r'^hakkimizdatablo$',
+                           'panel.views.hakkimizdatablo',
+                           name='hakkimizdatablo'),
+
+                       url(r'^iletisimform$',
+                           'panel.views.iletisimform',
+                           name='iletisimform'),
+
+                       url(r'^iletisimtablo$',
+                           'panel.views.iletisimtablo',
+                           name='iletisimtablo'),
+
+                       url(r'^karttablo$',
+                           'panel.views.karttablo',
+                           name='karttablo'),
+
+                       url(r'^kategoribannertablo$',
+                           'panel.views.kategoribannertablo',
+                           name='kategoribannertablo'),
+
+                       url(r'^koleksiyontablo$',
+                           'panel.views.koleksiyontablo',
+                           name='koleksiyontablo'),
+
+                       url(r'^onecikanlartablo$',
+                           'panel.views.onecikanlartablo',
+                           name='onecikanlartablo'),
+                       url(r'^renklertablo$',
+                           'panel.views.renklertablo',
+                           name='renklertablo'),
+
+                       url(r'^slidertablo$',
+                           'panel.views.slidertablo',
+                           name='slidertablo'),
+
+                       url(r'^uploadform$',
+                           'panel.views.uploadform',
+                           name='uploadform'),
+
+                       url(r'^$',
                            'panel.views.index',
                            name='index'),
+
+                       url(r'^altkategorilerresim$',
+                           'panel.views.altkategorilerresim',
+                           name='altkategorilerresim'),
+
                        )
 
 if settings.DEBUG:
