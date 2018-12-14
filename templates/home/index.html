@@ -1,217 +1,27 @@
-﻿<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>ANASAYFA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="{% static "home/assets/images/icon/favicon.png" %}" type="image/x-icon">
-
-    <!-- Web Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/bootstrap/css/bootstrap.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/bootstrap/css/bootstrap1.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/font-awesome/css/font-awesome.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/font-awesome/css/font-awesome.min.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/animate/animated.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/owl.carousel.min/owl.carousel.min.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/jquery.mmenu.all/jquery.mmenu.all.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/pe-icon-7-stroke/css/pe-icon-7-stroke.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/direction/css/noJS.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/prettyphoto-master/css/prettyPhoto.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/libs/slick-sider/slick.min.css"%}">
-
-    <!-- Template CSS-->
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/css/main.css"%}">
-    <link rel="stylesheet" type="text/css" href="{% static "home/assets/css/home.css"%}">
-  </head>
-  <body class="home-1">
-    <div id="preloaderKDZ"></div>
-    <div class="sn-site">
-      <header class="header sn-header-style-1">
-        <div class="header-top">
-          <div class="container">
-            <div class="header-top-left">
-              <aside id="text-2" class="widget widget_text">
-                <div class="textwidget"><i class="fa fa-envelope-o"></i>ekip@ekipmobilya.com</div>
-              </aside>
-              <aside id="text-3" class="widget widget_text">
-                <div class="textwidget"><i class="fa fa-mobile"></i>+90 (212) 210 88 10</div>
-              </aside>
-              <aside id="text-4" class="widget widget_text">
-                <div class="textwidget"><i class="fa fa-clock-o"></i> 29 Kasım Perşembe 2018 </div>
-              </aside>
-            </div>
-            <div class="header-top-right">
-              <div class="header-top-div header-top-search"> 
-                <input type="text" placeholder="Ürün Arama..."/><a class="btn"><i class="fa fa-search"></i></a>
-              </div>
-            </div>
-          </div>
-        </div><a href="#primary-menu"><i class="fa fa-bars"></i></a>
-        <div class="container">
-          <div class="header-bottom">
-
-            <div class="main-nav-wrapper header-left">
-              <div class="header-logo pull-left"><a href="index.html" title="YOLO"><img src="{% static "home/assets/images/logo/logoEkip.png"%}" alt="logo" class="logo-img"/></a></div>
-              <!-- .header-logo-->
-
-              <nav id="primary-menu" class="main-nav">
-                <ul class="nav">
-                  <li class=""><a href="index.html">Ana Sayfa</a>
-                  </li>
-                  
-                  <li class="menu-item menu-shop"><a href="shop.html">KATEGORİLER</a>
-                      <ul class="sub-menu row" style="height: auto; max-height: 600px; overflow-x: hidden;">
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">MAKAM TAKIMLARI</a>
-                              <ul class="sub-menu" style="height: auto; max-height: 150px; overflow-x: hidden;">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">GRANJ MAKAM TAKIM</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">ORFİSS</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">YÖNETİCİ TAKIMLARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD YÖNETİCİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">ORFİS YÖNETİCİ</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">ÇALIŞMA MASALARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">iŞ İSTASYONLARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">ORFİS</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">TOPLANTI MASALARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD TOPLANTILAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ TOPLANTILAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">ORFİS TOPLANTILAR</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">BANKOLAR</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MARWOOD BANKOLAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ BANKOLAR</a></li>                                 
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <ul class="menu_style_dropdown menu-item">
-                                  <li class="menu_style_dropdown menu-item"><a href="shop.html">KİTAPLIKLAR</a></li>
-                                  <li class="menu_style_dropdown menu-item"><a href="shop.html">YAN ÜRÜNLER</a></li>
-                              </ul>
-                          </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">KANEPELER</a>
-                              <ul class="sub-menu">                                
-                                   <li class="menu-item menu-item-object-page"><a href="shop.html">ÇOKLU BEKLEME KOLTUKLARI</a></li>
-                                    <li class="menu-item menu-item-object-page"><a href="shop.html">FORSİT</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="shop.html">REFAKATÇİ VE DİNLENME</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">SOFFA</a></li>
-                              </ul>
-                          </li>
-                           <li class="menu_style_dropdown menu-item">
-                              <a href="shop.html">KOLTUK GRUBU</a>
-                              <ul class="sub-menu">                                
-                                   <li class="menu-item menu-item-object-page"><a href="shop.html">AHŞAP KOLTUKLAR</a></li>
-                                    <li class="menu-item menu-item-object-page"><a href="shop.html">BEKLEME KOLTUKLARI</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="shop.html">KAFE BAR RESTORANT KOLTUKLARI</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="shop.html">FİLE KOLTUKLAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">FORSİT KOLTUK</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">KOLSİT KOLTUK</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="shop.html">KONFERANS SEMİNER</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="shop.html">MASACHİ KOLTUK</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="shop.html">MEZURA</a></li>
-                              </ul>
-                          </li>
-                      </ul>
-
-                      </li>
-
-                      <li class="menu-item menu-blog"><a href="renkler.html">RENKLER</a>
-                    
-                      </li>
-                      <li class="menu-item menu-blog"><a href="about-us.html">HAKKIMIZDA</a>
-                        
-                      </li>
-    
-                      <li class="menu-item menu-blog"><a href="contact-us.html">İLETİŞİM</a>
-                        
-                      </li>
-
-                      
-
-                      
-                    </ul>
-                  </li>
-                  
-
-
-
-                </ul>
-                
-                
-              </nav>
-              <!-- .header-main-nav-->
-            </div>
-
-          
-
-          </div>
-        </div>
-        
-      </header>
-      <!-- HEADER SON -->
-
-
-
-
-
+﻿{% extends 'home/base.html' %}
+{% block title %}
+Index
+{% endblock title %}
+{% block content %}
       <div id="example-wrapper">
         <div class="section">
           <div class="slide-home slide-home-1">
             <div data-number="1" data-margin="100" data-loop="yes" data-navcontrol="yes" class="sofani-owl-carousel">
               <div class="slide1">
                 <div class="slide1-left">
-                  
                 </div>
                 <div class="slide1-right">
-                  <figure><img src="{% static "home/assets/images/demo/Aras.jpg"%}" alt="slide" height="555"/></figure>
-                  
+                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/Aras.jpg" alt="slide" height="555"/></figure>
                 </div>
               </div>
               <div class="slide2">
-                <div class="slide2-bg"><img src="{% static "home/assets/images/demo/EFES L DÖRTLÜ MASA.jpg"%}"  alt="bg" height="555"/></div>
+                <div class="slide2-bg"><img src="{{STATIC_URL}}home/assets/images/demo/EFES L DÖRTLÜ MASA.jpg"  alt="bg" height="555"/></div>
                 <div class="slde2-content">
-                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <section>
           <div class="home-1-highlight yolo-wrap">
             <div class="container">
@@ -219,7 +29,7 @@
                 <div class="col-sm-3">
                   <div class="banner-shortcode-wrap style_1">
                     <div class="banner-content title_top"><a href="#">
-                        <h3 class="banner-title">İş İstasyonları</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:600px;" src="{% static "home/assets/images/anasayfa/isistasyon.jpg"%}" alt="demo"/></a></div>
+                        <h3 class="banner-title">İş İstasyonları</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:600px;" src="{{STATIC_URL}}home/assets/images/anasayfa/isistasyon.jpg" alt="demo"/></a></div>
                   </div>
                 </div>
                 <div class="col-sm-9">
@@ -227,13 +37,13 @@
                     <div class="col-sm-8">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">Makam Takımı</h3><span class="overlay-bg bg-df8888"></span><img style="width:570px; height:277px;" src="{% static "home/assets/images/anasayfa/makamtakimi.jpg"%}" alt="demo"/></a></div>
+                            <h3 class="banner-title">Makam Takımı</h3><span class="overlay-bg bg-df8888"></span><img style="width:570px; height:277px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimi.jpg" alt="demo"/></a></div>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">Çalışma Masaları</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:285px;" src="{% static "home/assets/images/anasayfa/calismamasa.jpg"%}" alt="demo"/></a></div>
+                            <h3 class="banner-title">Çalışma Masaları</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:285px;" src="{{STATIC_URL}}home/assets/images/anasayfa/calismamasa.jpg" alt="demo"/></a></div>
                       </div>
                     </div>
                   </div>
@@ -241,12 +51,12 @@
                     <div class="col-sm-4">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">Kanepe</h3><span class="overlay-bg bg-e3c56b"></span><img style="width:277px; height:285px;" src="{% static "home/assets/images/anasayfa/kanepe.jpg"%}" alt="demo"/></a></div>
+                            <h3 class="banner-title">Kanepe</h3><span class="overlay-bg bg-e3c56b"></span><img style="width:277px; height:285px;" src="{{STATIC_URL}}home/assets/images/anasayfa/kanepe.jpg" alt="demo"/></a></div>
                       </div>
                     </div>
                     <div class="col-sm-8">
                       <div class="banner-shortcode-wrap style_1">
-                        <div class="banner-content title_bottom"><a href="#"><img style="width:570px; height:277px;" src="{% static "home/assets/images/anasayfa/yonetici.jpg"%}" alt="demo"/>
+                        <div class="banner-content title_bottom"><a href="#"><img style="width:570px; height:277px;" src="{{STATIC_URL}}home/assets/images/anasayfa/yonetici.jpg" alt="demo"/>
                             <h3 class="banner-title">YÖNETİCİ TAKIMLARI</h3><span class="overlay-bg bg-e3c56b"></span></a></div>
                       </div>
                     </div>
@@ -262,7 +72,7 @@
           <div class="product">
             <div class="sperator text-center">
               <p>KOLEKSİYONLAR</p>
-              <div class="sperator-bottom"><img src="{% static "home/assets/images/demo/sperator.png"%}" alt="spertor"/></div>
+              <div class="sperator-bottom"><img src="{{STATIC_URL}}home/assets/images/demo/sperator.png" alt="spertor"/></div>
             </div>
             <div class="product-tab">
               <ul class="products-tabs nav nav-pills">
@@ -287,8 +97,8 @@
                             <div class="product-item-inner">
                               <div class="product-thumb">
                                 <div class="product-flash-wrap"></div>
-                                <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-                                <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog"/></div><a href="#" class="product-link">
+                                <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
+                                <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog"/></div><a href="#" class="product-link">
                                   <div class="product-hover-sign">
                                     <hr/>
                                     <hr/>
@@ -304,8 +114,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -323,8 +133,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -342,8 +152,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -361,8 +171,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -380,8 +190,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -399,8 +209,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -418,8 +228,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -437,8 +247,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -456,8 +266,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -485,8 +295,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -504,8 +314,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -523,8 +333,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -542,8 +352,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -561,8 +371,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -580,8 +390,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -599,8 +409,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -618,8 +428,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -637,8 +447,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -656,8 +466,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -685,8 +495,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -704,8 +514,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -723,8 +533,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -742,8 +552,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -761,8 +571,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -780,8 +590,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -799,8 +609,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -818,8 +628,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -837,8 +647,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -856,8 +666,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -885,8 +695,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -904,8 +714,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -923,8 +733,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -942,8 +752,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -961,8 +771,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -980,8 +790,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -999,8 +809,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1018,8 +828,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1037,8 +847,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1056,8 +866,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1085,8 +895,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1104,8 +914,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1123,8 +933,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1142,8 +952,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1161,8 +971,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1180,8 +990,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1199,8 +1009,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1218,8 +1028,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1237,8 +1047,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1256,8 +1066,8 @@
                                 <div class="product-item-inner">
                                     <div class="product-thumb">
                                         <div class="product-flash-wrap"></div>
-                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                        <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                        <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                             <div class="product-hover-sign">
                                                 <hr />
                                                 <hr />
@@ -1285,8 +1095,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1304,8 +1114,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1323,8 +1133,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1342,8 +1152,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1361,8 +1171,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1380,8 +1190,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1399,8 +1209,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1418,8 +1228,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1437,8 +1247,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1456,8 +1266,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1485,8 +1295,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ARMA.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ARMA.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1504,8 +1314,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1523,8 +1333,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1542,8 +1352,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/Boss.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/Boss.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1561,8 +1371,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/CARMEN.2.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1580,8 +1390,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LIZAMAKAMTAKIMI.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1599,8 +1409,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/LOFT.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/LOFT.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1618,8 +1428,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1637,8 +1447,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/patellaluksyuksekdolap.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1656,8 +1466,8 @@
                                           <div class="product-item-inner">
                                               <div class="product-thumb">
                                                   <div class="product-flash-wrap"></div>
-                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{% static "home/assets/images/anasayfa/makamtakimlari/swanluks.jpg"%}" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
+                                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
+                                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/swanluks.jpg" alt="38" class="attachment-shop_catalog size-shop_catalog" /></div><a href="#" class="product-link">
                                                       <div class="product-hover-sign">
                                                           <hr />
                                                           <hr />
@@ -1687,7 +1497,7 @@
               <div class="col-md-6">
                 <div class="banner-page banner-page-left">
                   <div class="banner-page-box">
-                    <figure><img style="height:328px;" src="{% static "home/assets/images/anasayfa/dortlu/ACTIVETOPLANTI.jpg"%}" alt="banner"/></figure>
+                    <figure><img style="height:328px;" src="{{STATIC_URL}}home/assets/images/anasayfa/dortlu/ACTIVETOPLANTI.jpg" alt="banner"/></figure>
                     <div class="content-hover">                    
                       <p class="banner-name">Toplantı Masa</p>
                     </div>
@@ -1701,7 +1511,7 @@
               <div class="col-md-6">
                 <div class="banner-page banner-page-left">
                   <div class="banner-page-box">
-                      <figure><img src="{% static "home/assets/images/anasayfa/dortlu/EFESLDORTLUMASA.jpg"%}" alt="banner" /></figure>
+                      <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/dortlu/EFESLDORTLUMASA.jpg" alt="banner" /></figure>
                     <div class="content-hover">                      
                       <p class="banner-name">Çalışma Masası</p>
                     </div>
@@ -1715,7 +1525,7 @@
               <div class="col-md-6">
                 <div class="banner-page banner-page-left">
                   <div class="banner-page-box">
-                      <figure><img style="height:412px;" src="{% static "home/assets/images/anasayfa/dortlu/LOFTMAKAMTAKIMI.png"%}" alt="banner" /></figure>
+                      <figure><img style="height:412px;" src="{{STATIC_URL}}home/assets/images/anasayfa/dortlu/LOFTMAKAMTAKIMI.png" alt="banner" /></figure>
                     <div class="content-hover">                      
                       <p class="banner-name">Makam Takım</p>
                     </div>
@@ -1729,7 +1539,7 @@
               <div class="col-md-6">
                 <div class="banner-page banner-page-left">
                   <div class="banner-page-box">
-                      <figure><img src="{% static "home/assets/images/anasayfa/dortlu/VEZUVTAKIMSIYAHBEYAZ.jpg"%}" alt="banner" /></figure>
+                      <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/dortlu/VEZUVTAKIMSIYAHBEYAZ.jpg" alt="banner" /></figure>
                     <div class="content-hover">                    
                       <p class="banner-name">Ofis Mobilya</p>
                     </div>
@@ -1748,13 +1558,13 @@
           <div class="dales-this-week">
             <div class="sperator text-center">
               <p>BLOG</p>
-              <div class="sperator-bottom"><img src="{% static "home/assets/images/demo/sperator.png"%}" alt="spertor"/></div>
+              <div class="sperator-bottom"><img src="{{STATIC_URL}}home/assets/images/demo/sperator.png" alt="spertor"/></div>
             </div>
             <div class="home-blog-box">
               <div data-number="3" data-margin="30" data-loop="yes" data-navcontrol="yes" class="sofani-owl-carousel">
                 <div class="blog-box">
                   <div class="blog-img">
-                    <figure><img src="{% static "home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png"%}" alt="blog" height="250"/></figure>
+                    <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/OTTAMANMAKAMTAKIMI.png" alt="blog" height="250"/></figure>
                     <div class="blog-overlay"></div>
                   </div>
                   <div class="blog-text">
@@ -1767,7 +1577,7 @@
                 </div>
                 <div class="blog-box">
                   <div class="blog-img">
-                    <figure><img src="{% static "home/assets/images/anasayfa/dortlu/VEZUVTAKIMSIYAHBEYAZ.jpg"%}" alt="blog" height="250"/></figure>
+                    <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/dortlu/VEZUVTAKIMSIYAHBEYAZ.jpg" alt="blog" height="250"/></figure>
                     <div class="blog-overlay"></div>
                   </div>
                   <div class="blog-text">
@@ -1780,7 +1590,7 @@
                 </div>
                 <div class="blog-box">
                   <div class="blog-img">
-                    <figure><img src="{% static "home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg"%}" alt="blog" height="250"/></figure>
+                    <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/BERUSSASIYAH.jpg" alt="blog" height="250"/></figure>
                     <div class="blog-overlay"></div>
                   </div>
                   <div class="blog-text">
@@ -1793,7 +1603,7 @@
                 </div>
                 <div class="blog-box">
                   <div class="blog-img">
-                    <figure><img src="{% static "home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg"%}" alt="blog" height="250"/></figure>
+                    <figure><img src="{{STATIC_URL}}home/assets/images/anasayfa/makamtakimlari/ATLAS.jpg" alt="blog" height="250"/></figure>
                     <div class="blog-overlay"></div>
                   </div>
                   <div class="blog-text">
@@ -1814,7 +1624,7 @@
             <div class="container">
               <div class="sperator text-center">
                 <p>KAMPANYALARDAN HABERDAR OLUN</p>
-                <div class="sperator-bottom"><img src="{% static "home/assets/images/demo/sperator.png"%}" alt="spertor"/></div>
+                <div class="sperator-bottom"><img src="{{STATIC_URL}}home/assets/images/demo/sperator.png" alt="spertor"/></div>
               </div>
               <div class="newletter-content">
                 <p>Kampanyalardan haberdar olmak için emailinizi gönderin.</p>
@@ -1825,88 +1635,5 @@
             </div>
           </div>
         </div>
+          {% endblock %}
 
-        <div class="section-no-margin">
-          <footer class="footer footer-style-1">
-            <div class="footer-top">
-              <div class="container"><a href="index.html" title="Ekip Mobilya"><img src="{% static "home/assets/images/logo/logoEkip.png"%}" alt="logo" class="logo-img"/></a>
-                <ul class="social-footer">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                </ul>
-                <p class="desc"><strong>Ekip Mobilya 1989 yilinda kurulmuş olup 20 yıldır ofis mobilyası ve dekorasyon <br> sektöründe kalite ve güvenilirliği ile hizmet vermektedir.</strong></p>
-                <div class="div-icon-box">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="icon-box icon-box-style2">
-                        <div class="icon-box-left"><i class="fa fa-map-marker"></i></div>
-                        <div class="icon-box-right"><span>Gürsel Mah. Kağıthane Cad. No:78 Kağıthane / İSTANBUL </span></div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="icon-box icon-box-style2">
-                        <div class="icon-box-left"><i class="fa fa-phone"></i></div>
-                        <div class="icon-box-right"><span>Telefon : +90 (212) 210 88 10 <br>
-                          Telefon : +90 (212) 220 35 98 <br>
-                          Fax : +90 (212) 210 88 09 <br>
-                          Gsm : +90 (532) 397 88 95</span></div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="icon-box icon-box-style2">
-                        <div class="icon-box-left"><i class="fa fa-envelope-o"></i></div>
-                        <div class="icon-box-right"><span>Email : ekip@ekipmobilya.com</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="footer-bottom">
-              <div class="container">
-                <div class="copyright">©  2018 Ekip Mobilya</div>
-                
-              </div>
-            </div>
-          </footer>
-          <!-- .footer-->
-        </div>
-
-      </div>
-    </div>
-    <!-- .mv-site-->
-    
-    
-
-    <div class="popup-wrapper">
-    </div>
-    <!-- .popup-wrapper-->
-    <div class="click-back-top-body">
-      <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="btn-icon fa fa-angle-up"></i></button>
-    </div>
-
-    <!-- Vendor jQuery-->
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery/jquery-2.1.4.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery/jquery-1.11.1.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery/bootstrap.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/bootstrap/js/bootstrap.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/animate/wow.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/owl.carousel.min/owl.carousel.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery.mmenu.all/jquery.mmenu.all.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/countdown/jquery.countdown.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery-appear/jquery.appear.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/jquery-countto/jquery.countTo.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/direction/js/jquery.hoverdir.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/direction/js/modernizr.custom.97074.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/isotope/isotope.pkgd.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/isotope/fit-columns.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/isotope/isotope-docs.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/mansory/mansory.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/prettyphoto-master/js/jquery.prettyPhoto.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/libs/slick-sider/slick.min.js"%}"></script>
-    <script type="text/javascript" src="{% static "home/assets/js/min/main.min.js"%}"></script>
-  </body>
-</html>

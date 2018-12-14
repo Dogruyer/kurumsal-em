@@ -20,23 +20,17 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Bilgi Formu</h3>
-                            <p class="text-muted m-b-30 font-13"> Alanlar </p>
+                            <h3 class="box-title m-b-0">Sample Basic Forms</h3>
+                            <p class="text-muted m-b-30 font-13"> Bootstrap Elements </p>
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Adres</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Adres"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Telefon</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Telefon"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Email</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Email"> </div>
-
-                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Gönder</button>
-                                        <button type="submit" class="btn btn-inverse waves-effect waves-light">İptal</button>
+                                    <form method="POST" action="" class="form-signin" role="form" enctype="multipart/form-data">
+                                        {% for field in form %}
+                                            <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" placeholder="{{field.label}}" class="form-control" />
+                                            <br><br>
+                                        {% endfor %}
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
                                     </form>
                                 </div>
                             </div>

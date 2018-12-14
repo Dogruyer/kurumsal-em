@@ -58,8 +58,8 @@ urlpatterns = patterns('',
                            'panel.views.onecikanlartablo',
                            name='onecikanlartablo'),
                        url(r'^renklertablo$',
-                           'panel.views.renklertablo',
-                           name='renklertablo'),
+                           'panel.views.tumbannerlar',
+                           name='tumbannerlar'),
 
                        url(r'^slidertablo$',
                            'panel.views.slidertablo',
@@ -76,6 +76,16 @@ urlpatterns = patterns('',
                        url(r'^altkategorilerresim$',
                            'panel.views.altkategorilerresim',
                            name='altkategorilerresim'),
+
+                       url(r'^bannerekle$',
+                           'panel.views.bannerekle',
+                           name='bannerekle'),
+
+                       url(r'^bannerduzenle/(?P<id>\w+)$',
+                           'panel.views.bannerduzenle',
+                           name='bannerduzenle'),
+
+
 
                        )
 
