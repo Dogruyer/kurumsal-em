@@ -1,26 +1,14 @@
 from django.db import models
 
 
-class Kategori(models.Model):
-    title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='images/kategori/',
-                              default='images/kategori/default.jpg')
-
-
-class Mail(models.Model):
-    email = models.EmailField(max_length=200)
-
-
 class Slider(models.Model):
     slider_image = models.ImageField(upload_to='images/slider/',
                                      default='images/slider/default.jpg')
 
-
-class Banner(models.Model):
+class Kategori(models.Model):
     title = models.CharField(max_length=100)
-    banner_image = models.ImageField(upload_to='static/images/banner/',
-                                     default='static/images/banner/default.jpg')
-
+    kategori_image = models.ImageField(upload_to='images/kategori/',
+                              default='images/kategori/default.jpg')
 
 class Koleksiyonlar(models.Model):
     koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
@@ -72,3 +60,11 @@ class Hakkimizda(models.Model):
                                           default='static/images/hakkimizda/default.jpg')
     sayfa_gorseli = models.ImageField(upload_to='static/images/hakkimizda/',
                                       default='static/images/hakkimizda/default.jpg')
+
+class Banner(models.Model):
+    title = models.CharField(max_length=100)
+    banner_image = models.ImageField(upload_to='static/images/banner/',
+                                     default='static/images/banner/default.jpg')
+
+class Mail(models.Model):
+    email = models.EmailField(max_length=200)

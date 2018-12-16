@@ -85,6 +85,14 @@ urlpatterns = patterns('',
                            'panel.views.bannerduzenle',
                            name='bannerduzenle'),
 
+                       url(r'^slaytekle$',
+                           'panel.views.slaytekle',
+                           name='slaytekle'),
+
+                      url(r'^slaytduzenle/(?P<id>\w+)$',
+                           'panel.views.slaytduzenle',
+                           name='slaytduzenle'),
+
 
 
                        )
