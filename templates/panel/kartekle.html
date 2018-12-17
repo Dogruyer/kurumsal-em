@@ -4,60 +4,39 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Düzenleme Tablosu</h4>
-                    </div>
+                        <h4 class="page-title">Notifications</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="form-upload.html" target="_blank" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">EKLE</a>
+                        <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">ANASAYFA</a></li>
-                            <li><a href="#">Koleksiyon</a></li>
-                            <li class="active">Koleksiyonlar</li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Ui Elements</a></li>
+                            <li class="active">Notifications</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /row -->
-                <!-- .row -->
+                <!-- /.row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel">
-                            <div class="panel-heading">ANASAYFA SLİDER</div>
-                            <div class="table-responsive">
-                                <table class="table table-hover manage-u-table">
-                                    <thead>
-                                        <tr>
-                                            <th width="70" class="text-center">#</th>
-                                            <th>Koleksiyon İsim</th>
-                                             <th>Koleksiyon icerik</th>
-                                            <th>Koleksiyon Resim</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for i in tumu %}
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td>
-                                                {{ i.title }}
-                                            </td>
-                                             <td>
-                                                {{ i.content }}
-                                            </td>
-                                            <td><img width="20px;" height="20px;" src="{{MEDIA_URL}}{{ i.koleksiyon_image }}"></td>
-                                            <td>
-                                                <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
-                                                <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                            </td>
-                                        </tr>
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Sample Basic Forms</h3>
+                            <p class="text-muted m-b-30 font-13"> Bootstrap Elements </p>
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <form method="POST" action="" class="form-signin" role="form" enctype="multipart/form-data">
+                                        {% for field in form %}
+                                            <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" placeholder="{{field.label}}" class="form-control" />
+                                            <br><br>
                                         {% endfor %}
-                                    </tbody>
-                                </table>
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-                <!-- ============================================================== -->
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
                 <!-- .right-sidebar -->
@@ -74,7 +53,7 @@
                                 <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
                                 <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
                                 <li><b>With Dark sidebar</b></li>
-                                <br />
+                                <br/>
                                 <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
                                 <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
                                 <li><a href="javascript:void(0)" data-theme="gray-dark" class="yellow-dark-theme">9</a></li>
@@ -84,7 +63,7 @@
                             </ul>
                             <ul class="m-t-20 all-demos">
                                 <li><b>Choose other demos</b></li>
-                            </ul>
+                            </ul>s
                             <ul class="m-t-20 chatonline">
                                 <li><b>Chat option</b></li>
                                 <li>

@@ -25,47 +25,28 @@
                             <div class="panel-heading">MANAGE USERS</div>
                             <div class="table-responsive">
                                 <table class="table table-hover manage-u-table">
-                                    <thead>
+                                     <thead>
                                         <tr>
                                             <th width="70" class="text-center">#</th>
-                                            <th>Marka</th>
-                                            <th>Başlık</th>
-                                            <th>Fiyat</th>
-                                            <th>İmage</th>
+                                            <th>İsim</th>
+                                            <th>Resim</th>
                                             <th width="300">MANAGE</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                     <tbody>
+                                        {% for i in tumu %}
                                         <tr>
                                             <td class="text-center">1</td>
                                             <td>
-                                                Marka
-                                                <br /><span class="text-muted">Texas, Unitedd states</span>
+                                                {{ i.title }}
                                             </td>
-                                            <td>
-                                                Visual Designer
-                                                <br /><span class="text-muted">Past : teacher</span>
-                                            </td>
-                                            <td>
-                                                daniel@website.com
-                                                <br /><span class="text-muted">999 - 444 - 555</span>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-12 ol-md-12 col-xs-12">
-                                                    <div class="white-box">
-                                                        <h3 class="box-title">Resim</h3>
-                                                        <label for="input-file-now-custom-1">Tarih</label>
-                                                        <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="~/plugins/bower_components/dropify/src/images/test-image-1.jpg" />
-                                                    </div>
-                                                </div>
-                                            </td>
-
+                                            <td><img width="20px;" height="20px;" src="{{MEDIA_URL}}{{ i.kart_image }}"></td>
                                             <td>
                                                 <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
-                                                <a href="form-upload.html" target="_blank" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></a>
+                                                <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                             </td>
                                         </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

@@ -77,7 +77,7 @@ def altkategoriresimrekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/altkategoriresimrekle.html", c)
 
 def altkategoriresimduzenle(request, id):
     duzenlenecek = Kategori.objects.get(id=id)
@@ -131,7 +131,7 @@ def koleksiyonekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/koleksiyonekle.html", c)
 
 def koleksiyonduzenle(request, id):
     duzenlenecek = Koleksiyonlar.objects.get(id=id)
@@ -187,7 +187,7 @@ def kartekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/kartekle.html", c)
 
 def kartduzenle(request, id):
     duzenlenecek = Kartlar.objects.get(id=id)
@@ -241,7 +241,7 @@ def blogekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/blogekle.html", c)
 
 def blogduzenle(request, id):
     duzenlenecek = Blog.objects.get(id=id)
@@ -300,7 +300,7 @@ def footerekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/footerekle.html", c)
 
 def footerduzenle(request, id):
     duzenlenecek = Blog.objects.get(id=id)
@@ -361,7 +361,7 @@ def kategoribannerekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/kategoribannerekle.html", c)
 
 def kategoribannerduzenle(request, id):
     duzenlenecek = Urun.objects.get(id=id)
@@ -419,7 +419,7 @@ def renklerekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/renklerekle.html", c)
 
 def renklerduzenle(request, id):
     duzenlenecek = Renkler.objects.get(id=id)
@@ -473,7 +473,7 @@ def hakkimizdaekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/ornekform.html", c)
+    return render(request, "panel/hakkimizdaekle.html", c)
 
 def hakkimizdaduzenle(request, id):
     duzenlenecek = Hakkimizda.objects.get(id=id)

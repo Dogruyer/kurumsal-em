@@ -27,41 +27,28 @@
                                     <thead>
                                         <tr>
                                             <th width="70" class="text-center">#</th>
-                                            <th>Başlık</th>
-                                            <th>Tarih</th>
-                                            <th>Yönetim</th>
-                                            <th>Ürün Bilgi</th>
-                                            <th width="250">Resim</th>
-                                            <th width="300">MANAGE</th>
+                                            <th>İsim</th>
+                                             <th>icerik</th>
+                                            <th>Resim</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                         <tbody>
+                                        {% for i in tumu %}
                                         <tr>
                                             <td class="text-center">1</td>
-                                            <td>Daniel Kristeen
-                                                <br/><span class="text-muted">Texas, Unitedd states</span></td>
-                                            <td>Visual Designer
-                                                <br/><span class="text-muted">Past : teacher</span></td>
-                                            <td>daniel@website.com
-                                                <br/><span class="text-muted">999 - 444 - 555</span></td>
-                                            <td>15 Mar 1988
-                                                <br/><span class="text-muted">10: 55 AM</span></td>
                                             <td>
-                                                <select class="form-control">
-                                                    <option>Modulator</option>
-                                                    <option>Admin</option>
-                                                    <option>User</option>
-                                                    <option>Subscriber</option>
-                                                </select>
+                                                {{ i.title }}
                                             </td>
+                                             <td>
+                                                {{ i.content }}
+                                            </td>
+                                            <td><img width="20px;" height="20px;" src="{{MEDIA_URL}}{{ i.blog_image }}"></td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-key"></i></button>
                                                 <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
                                                 <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                                <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-20"><i class="ti-upload"></i></button>
                                             </td>
                                         </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
