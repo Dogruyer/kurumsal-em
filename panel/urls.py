@@ -30,11 +30,11 @@ urlpatterns = patterns('',
                            'panel.views.altkategoriresimtablo',
                            name='altkategoriresimtablo'),
 
-                       url(r'^altkategoriresimekle$',
+                       url(r'^altkategoriresimekle',
                            'panel.views.altkategoriresimekle',
                            name='altkategoriresimekle'),
 
-                       url(r'^altkategoriresimduzenle$',
+                       url(r'^altkategoriresimduzenle/(?P<id>\w+)$',
                            'panel.views.altkategoriresimduzenle',
                            name='altkategoriresimduzenle'),
 
@@ -50,7 +50,7 @@ urlpatterns = patterns('',
                            'panel.views.koleksiyonekle',
                            name='koleksiyonekle'),
 
-                       url(r'^koleksiyonduzenle$',
+                       url(r'^koleksiyonduzenle/(?P<id>\w+)$',
                            'panel.views.koleksiyonduzenle',
                            name='koleksiyonduzenle'),
 
@@ -67,7 +67,7 @@ urlpatterns = patterns('',
                            'panel.views.kartekle',
                            name='kartekle'),
 
-                       url(r'^karttablo$',
+                       url(r'^kartduzenle/(?P<id>\w+)$',
                            'panel.views.karttablo',
                            name='kartekle'),
 
@@ -84,7 +84,7 @@ urlpatterns = patterns('',
                            'panel.views.blogekle',
                            name='blogekle'),
 
-                       url(r'^blogduzenle$',
+                       url(r'^blogduzenle/(?P<id>\w+)$',
                            'panel.views.blogduzenle',
                            name='blogduzenle'),
 
@@ -102,7 +102,7 @@ urlpatterns = patterns('',
                            name='footerekle'),
 
 
-                       url(r'^footerduzenle$',
+                       url(r'^footerduzenle/(?P<id>\w+)$',
                            'panel.views.footerduzenle',
                            name='footerduzenle'),
 
@@ -122,7 +122,7 @@ urlpatterns = patterns('',
                            name='kategoribannerekle'),
 
 
-                       url(r'^kategoribannerduzenle$',
+                       url(r'^kategoribannerduzenle/(?P<id>\w+)$',
                            'panel.views.kategoribannerduzenle',
                            name='kategoribannerduzenle'),
 
@@ -139,7 +139,7 @@ urlpatterns = patterns('',
                            'panel.views.renklerekle',
                            name='renklerekle'),
 
-                       url(r'^renklerduzenle$',
+                       url(r'^renklerduzenle/(?P<id>\w+)$',
                            'panel.views.renklerduzenle',
                            name='renklerduzenle'),
 
@@ -156,7 +156,7 @@ urlpatterns = patterns('',
                            'panel.views.hakkimizdaekle',
                            name='hakkimizdaekle'),
 
-                       url(r'^hakkimizdaduzenle$',
+                       url(r'^hakkimizdaduzenle/(?P<id>\w+)$',
                            'panel.views.hakkimizdaduzenle',
                            name='hakkimizdaduzenle'),
 

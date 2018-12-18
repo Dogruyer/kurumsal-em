@@ -61,7 +61,7 @@ def altkategoriresimtablo(request):
     c = {"tumu": tumu}
     return render(request, "panel/altkategoriresimtablo.html")
 
-def altkategoriresimrekle(request):
+def altkategoriresimekle(request):
     if request.POST:
         form = Yenialtkategoriresimtablo(request.POST, request.FILES)
 
@@ -77,7 +77,7 @@ def altkategoriresimrekle(request):
 
     c.update(csrf(request))
 
-    return render(request, "panel/altkategoriresimrekle.html", c)
+    return render(request, "panel/altkategoriresimekle.html", c)
 
 def altkategoriresimduzenle(request, id):
     duzenlenecek = Kategori.objects.get(id=id)
@@ -99,7 +99,7 @@ def altkategoriresimduzenle(request, id):
     c = {"adi": adi,
          "gorseli": gorseli}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/altkategoriresimduzenle.html", c)
 
 def altkategoriresimsil(request, id):
     duzenlenecek = Kategori.objects.get(id=id)
@@ -156,7 +156,7 @@ def koleksiyonduzenle(request, id):
          "gorseli": gorseli,
          "icerik" : content}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/koleksiyonduzenle.html", c)
 
 def koleksiyonsil(request, id):
     duzenlenecek = Koleksiyonlar.objects.get(id=id)
@@ -209,7 +209,7 @@ def kartduzenle(request, id):
     c = {"adi": adi,
          "gorseli": gorseli}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/kartduzenle.html", c)
 
 def kartsil(request, id):
     duzenlenecek = Kartlar.objects.get(id=id)
@@ -266,7 +266,7 @@ def blogduzenle(request, id):
          "gorseli": gorseli,
          "content": content}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/blogduzenle.html", c)
 
 def blogsil(request, id):
     duzenlenecek = Blog.objects.get(id=id)
@@ -328,7 +328,7 @@ def footerduzenle(request, id):
          "telefon": telefon,
          "email": email}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/footerduzenle.html", c)
 
 def footersil(request, id):
     duzenlenecek = Footer.objects.get(id=id)
@@ -386,7 +386,7 @@ def kategoribannerduzenle(request, id):
          "gorseli": gorseli,
          "content": content}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/kategoribannerduzenle.html", c)
 
 def kategoribannersil(request, id):
     duzenlenecek = Urun.objects.get(id=id)
@@ -441,7 +441,7 @@ def renklerduzenle(request, id):
     c = {"adi": adi,
          "gorseli": gorseli}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/renklerduzenle.html", c)
 
 def renklersil(request, id):
     duzenlenecek = Renkler.objects.get(id=id)
@@ -501,7 +501,7 @@ def hakkimizdaduzenle(request, id):
          "hakkimizda_gorsel": hakkimizda_gorsel,
          "sayfa_gorseli": sayfa_gorseli}
 
-    return render(request, "panel/duzenleform.html", c)
+    return render(request, "panel/hakkimizdaduzenle.html", c)
 
 def hakkimizdasil(request, id):
     duzenlenecek = Hakkimizda.objects.get(id=id)
