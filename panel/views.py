@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, render_to_response, redirect
+from django.core.urlresolvers import reverse
 from .forms import *
 from .models import *
 from django.core.context_processors import csrf
@@ -6,6 +7,7 @@ from django.core.context_processors import csrf
 
 def index(request):
     return render(request, "panel/index.html")
+
 
 def slidertablo(request):
     tumu = Slider.objects.all()
@@ -20,7 +22,7 @@ def slaytekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(slidertablo))
 
     form = YeniSliderForm()
 
@@ -41,10 +43,7 @@ def slaytduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
-
-    # form = YeniBannerForm(initial={'title': duzenlenecek.title,
-    #                                'banner_image': duzenlenecek.banner_image})
+        return redirect(reverse(slidertablo))
 
     c = {"gorseli": gorseli}
 
@@ -54,12 +53,14 @@ def slaytsil(request, id):
     duzenlenecek = Slider.objects.get(id=id)
     duzenlenecek.delete()
 
+    return redirect(reverse(slidertablo))
+
 
 
 def altkategoriresimtablo(request):
     tumu = Kategori.objects.all()
     c = {"tumu": tumu}
-    return render(request, "panel/altkategoriresimtablo.html")
+    return render(request, "panel/altkategoriresimtablo.html", c)
 
 def altkategoriresimekle(request):
     if request.POST:
@@ -113,14 +114,17 @@ def altkategoriresimsil(request, id):
 def koleksiyontablo(request):
     tumu = Koleksiyonlar.objects.all()
     c = {"tumu": tumu}
-    return render(request, "panel/koleksiyontablo.html")
+    return render(request, "panel/koleksiyontablo.html", c)
 
 def koleksiyonekle(request):
     if request.POST:
         form = Yenikoleksiyontablo(request.POST, request.FILES)
+        kategori = request.POST["kategori"]
+        kategori_nesne = Kategori.objects.get(title=kategori)
+
 
         if form.is_valid():
-            form.save()
+            form.save(kategori_nesne)
 
             return HttpResponse("Basarili")
 
@@ -273,7 +277,6 @@ def blogsil(request, id):
     duzenlenecek.delete()
 
     return HttpResponse("silindi")
-
 
 
 
@@ -543,8 +546,6 @@ def uploadform(request):
 
 def altkategorilerresim(request):
     return render(request, "panel/altkategorilerresim.html")
-
-
 
 
 

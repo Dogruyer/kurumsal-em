@@ -4,15 +4,17 @@ from django.db import models
 class Slider(models.Model):
     slider_image = models.ImageField(upload_to='images/slider/',
                                      default='images/slider/default.jpg')
-
 class Kategori(models.Model):
+    title = models.CharField(max_length=100)
+
+class Kategori_bolumu(models.Model):
     title = models.CharField(max_length=100)
     kategori_image = models.ImageField(upload_to='images/kategori/',
                               default='images/kategori/default.jpg')
 
 class Koleksiyonlar(models.Model):
-    koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
-                                         default='static/images/koleksiyonlar/default.jpg')
+    # koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
+    #                                      default='static/images/koleksiyonlar/default.jpg')
     kategori = models.ForeignKey(Kategori)
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)

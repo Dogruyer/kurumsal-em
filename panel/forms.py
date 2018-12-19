@@ -41,11 +41,12 @@ class Yenikoleksiyontablo(ModelForm):
     class Meta:
         model = Koleksiyonlar
 
-        def save(self, user):
+        def save(self, kategori_nesne):
             yeni = Koleksiyonlar()
             yeni.title = self.cleaned_data.get('title')
             yeni.content = self.cleaned_data.get('content')
             yeni.image = self.cleaned_data.get('koleksiyon_image')
+            yeni.kategori = kategori_nesne
             yeni.save()
 
 class Yenikarttablo(ModelForm):

@@ -23,6 +23,10 @@ urlpatterns = patterns('',
                            'panel.views.slaytduzenle',
                            name='slaytduzenle'),
 
+                       url(r'^slaytsil/(?P<id>\w+)$',
+                           'panel.views.slaytsil',
+                           name='slaytsil'),
+
 
 
 
@@ -53,6 +57,10 @@ urlpatterns = patterns('',
                        url(r'^koleksiyonduzenle/(?P<id>\w+)$',
                            'panel.views.koleksiyonduzenle',
                            name='koleksiyonduzenle'),
+
+                       url(r'^koleksiyonsil/(?P<id>\w+)$',
+                           'panel.views.koleksiyonsil',
+                           name='koleksiyonsil'),
 
 
 
