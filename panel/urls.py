@@ -29,6 +29,24 @@ urlpatterns = patterns('',
 
 
 
+                       url(r'^kategoritablo$',
+                           'panel.views.kategoritablo',
+                           name='kategoritablo'),
+
+                       url(r'^kategoriekle$',
+                           'panel.views.kategoriekle',
+                           name='kategoriekle'),
+
+                       url(r'^kategoriduzenle/(?P<id>\w+)$',
+                           'panel.views.kategoriduzenle',
+                           name='kategoriduzenle'),
+
+                       url(r'^kategorisil/(?P<id>\w+)$',
+                           'panel.views.kategorisil',
+                           name='kategorisil'),
+
+
+
 
                        url(r'^altkategoriresimtablo$',
                            'panel.views.altkategoriresimtablo',

@@ -4,9 +4,15 @@ from django.shortcuts import render_to_response,render,HttpResponse
 from django.core.context_processors import csrf
 
 from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, render_to_response, redirect
+from django.core.urlresolvers import reverse
+from panel.models import *
+from django.core.context_processors import csrf
 
 def home(request):
-    return render(request, "home/index.html")
+    tumu = Kategori.objects.all()
+    c = {"tumu": tumu}
+    return render(request, "home/index.html", c)
 
 def shop(request):
     return render(request, "home/shop.html")

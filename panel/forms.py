@@ -8,6 +8,16 @@ class BasicForm(ModelForm):
         model = Mail
 
 
+class YeniKategoriForm(ModelForm):
+    class Meta:
+        model = Kategori
+
+        def save(self, user):
+            yeni = Kategori()
+            yeni.title = self.cleaned_data.get('title')
+            yeni.save()
+
+
 class YeniBannerForm(ModelForm):
     class Meta:
         model = Banner
@@ -85,12 +95,14 @@ class Yenifootertablo(ModelForm):
 class Yenikategoribannertablo(ModelForm):
     class Meta:
         model = Urun
+        exclude = ["kategori_id"]
 
-        def save(self, user):
+        def save(self, kategori_getir):
             yeni = Urun()
             yeni.title = self.cleaned_data.get('title')
             yeni.content = self.cleaned_data.get('content')
             yeni.image = self.cleaned_data.get('urun_image')
+            yeni.kategori_id = kategori_getir
             yeni.save()
 
 class Yenirenklertablo(ModelForm):

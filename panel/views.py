@@ -58,7 +58,7 @@ def slaytsil(request, id):
 
 
 def altkategoriresimtablo(request):
-    tumu = Kategori.objects.all()
+    tumu = Kategori_bolumu.objects.all()
     c = {"tumu": tumu}
     return render(request, "panel/altkategoriresimtablo.html", c)
 
@@ -69,7 +69,7 @@ def altkategoriresimekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(altkategoriresimtablo))
 
     form = Yenialtkategoriresimtablo()
 
@@ -81,7 +81,7 @@ def altkategoriresimekle(request):
     return render(request, "panel/altkategoriresimekle.html", c)
 
 def altkategoriresimduzenle(request, id):
-    duzenlenecek = Kategori.objects.get(id=id)
+    duzenlenecek = Kategori_bolumu.objects.get(id=id)
 
     adi = duzenlenecek.title
     gorseli = duzenlenecek.kategori_image
@@ -92,8 +92,7 @@ def altkategoriresimduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
-
+        return redirect(reverse(altkategoriresimtablo))
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
 
@@ -103,11 +102,56 @@ def altkategoriresimduzenle(request, id):
     return render(request, "panel/altkategoriresimduzenle.html", c)
 
 def altkategoriresimsil(request, id):
+    duzenlenecek = Kategori_bolumu.objects.get(id=id)
+    duzenlenecek.delete()
+
+    return redirect(reverse(altkategoriresimtablo))
+
+
+def kategoritablo(request):
+    tumu = Kategori.objects.all()
+    c = {"tumu": tumu}
+    return render(request, "panel/kategoritablo.html", c)
+
+def kategoriekle(request):
+    if request.POST:
+        form = YeniKategoriForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect(reverse(kategoritablo))
+
+    form = YeniKategoriForm()
+
+    c = {"form": form,
+         "request": request}
+
+    c.update(csrf(request))
+
+    return render(request, "panel/kategoriekle.html", c)
+
+def kategoriduzenle(request, id):
+    duzenlenecek = Kategori.objects.get(id=id)
+
+    adi = duzenlenecek.title
+
+    if request.POST:
+        duzenlenecek.title = request.POST["title"]
+
+        duzenlenecek.save()
+
+        return redirect(reverse(kategoritablo))
+
+    c = {"adi": adi}
+
+    return render(request, "panel/kategoriduzenle.html", c)
+
+def kategorisil(request, id):
     duzenlenecek = Kategori.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
-
+    return redirect(reverse(kategoritablo))
 
 
 
@@ -182,7 +226,7 @@ def kartekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(karttablo))
 
     form = Yenikarttablo()
 
@@ -205,7 +249,7 @@ def kartduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(karttablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -219,7 +263,7 @@ def kartsil(request, id):
     duzenlenecek = Kartlar.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(karttablo))
 
 
 
@@ -236,7 +280,7 @@ def blogekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(blogtablo))
 
     form = Yeniblogtablo()
 
@@ -261,7 +305,7 @@ def blogduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(blogtablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -276,7 +320,7 @@ def blogsil(request, id):
     duzenlenecek = Blog.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(blogtablo))
 
 
 
@@ -294,7 +338,7 @@ def footerekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(footertablo))
 
     form = Yenifootertablo()
 
@@ -321,7 +365,7 @@ def footerduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(footertablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -337,7 +381,7 @@ def footersil(request, id):
     duzenlenecek = Footer.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(footertablo))
 
 
 
@@ -346,20 +390,29 @@ def footersil(request, id):
 def kategoribannertablo(request):
     tumu = Urun.objects.all()
     c = {"tumu": tumu}
-    return render(request, "panel/kategoribannertablo.html")
+    return render(request, "panel/kategoribannertablo.html",c)
 
 def kategoribannerekle(request):
+    tumkategoriler = Kategori.objects.all()
     if request.POST:
         form = Yenikategoribannertablo(request.POST, request.FILES)
+        kategori = request.POST["kategori"]
+        kategori_getir = Kategori.objects.get(id=kategori)
 
         if form.is_valid():
-            form.save()
+            yeni = Urun()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.content = form.cleaned_data.get('content')
+            yeni.image = form.cleaned_data.get('urun_image')
+            yeni.kategori_id = kategori_getir
+            yeni.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(kategoribannertablo))
 
     form = Yenikategoribannertablo()
 
     c = {"form": form,
+         "tumkategoriler" : tumkategoriler,
          "request": request}
 
     c.update(csrf(request))
@@ -380,7 +433,7 @@ def kategoribannerduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(kategoribannertablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -395,7 +448,7 @@ def kategoribannersil(request, id):
     duzenlenecek = Urun.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(kategoribannertablo))
 
 
 
@@ -413,7 +466,7 @@ def renklerekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(renklertablo))
 
     form = Yenirenklertablo()
 
@@ -436,7 +489,7 @@ def renklerduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(renklertablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -450,7 +503,7 @@ def renklersil(request, id):
     duzenlenecek = Renkler.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(renklertablo))
 
 
 
@@ -467,7 +520,7 @@ def hakkimizdaekle(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(hakkimizdatablo))
 
     form = Yenihakkimizdatablo()
 
@@ -494,7 +547,7 @@ def hakkimizdaduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
+        return redirect(reverse(hakkimizdatablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -510,7 +563,7 @@ def hakkimizdasil(request, id):
     duzenlenecek = Hakkimizda.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(hakkimizdatablo))
 
 
 

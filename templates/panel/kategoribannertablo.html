@@ -8,11 +8,11 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="javascript: void(0);" target="_blank" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">EKLE</a>
+                        <a href="/panel/kategoribannerekle" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">EKLE</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Table</a></li>
-                            <li class="active">Basic Table</li>
+                            <li><a href="#">ANASAYFA</a></li>
+                            <li><a href="#">KATEGORİBANNER</a></li>
+                            <li class="active">TABLO</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -31,6 +31,7 @@
                                             <th>İsim</th>
                                             <th>İcerik</th>
                                             <th>Resim</th>
+                                            <th>Kategorisi</th>
                                             <th width="300">MANAGE</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,9 @@
                                                 {{ i.content }}
                                             </td>
                                             <td><img width="20px;" height="20px;" src="{{MEDIA_URL}}{{ i.urun_image }}"></td>
+                                            <td>{{ i.kategori_id.title }}
+                                            </td>
+                                            <td></td>
                                             <td>
                                                 <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-trash"></i></button>
                                                 <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>

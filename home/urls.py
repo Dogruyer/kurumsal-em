@@ -6,7 +6,7 @@ from django.conf import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$',
+                       url(r'^index$',
                           'home.views.home',
                           name='home'),
 

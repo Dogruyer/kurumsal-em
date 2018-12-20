@@ -13,8 +13,8 @@ class Kategori_bolumu(models.Model):
                               default='images/kategori/default.jpg')
 
 class Koleksiyonlar(models.Model):
-    # koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
-    #                                      default='static/images/koleksiyonlar/default.jpg')
+    koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
+                                          default='static/images/koleksiyonlar/default.jpg')
     kategori = models.ForeignKey(Kategori)
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
@@ -46,7 +46,7 @@ class Urun(models.Model):
                                    default='static/images/urun/default.jpg')
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
-    kategori = models.ForeignKey(Kategori)
+    kategori_id = models.ForeignKey(Kategori)
 
 
 class Renkler(models.Model):

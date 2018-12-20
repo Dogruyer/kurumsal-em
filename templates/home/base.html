@@ -70,95 +70,50 @@
 
               <nav id="primary-menu" class="main-nav">
                 <ul class="nav">
-                  <li class=""><a href="index.html">Ana Sayfa</a>
+                  <li class=""><a href="">Ana Sayfa</a>
                   </li>
 
-                  <li class="menu-item menu-shop"><a href="shop.html">KATEGORİLER</a>
-                      <ul class="sub-menu row">
-                          <li class="menu_style_dropdown menu-item">
-                              <a href="#">MAKAM TAKIMLARI</a>
-                              <ul class="sub-menu" style="height: auto; max-height: 150px; overflow-x: hidden;">
-                                  <li class="menu-item menu-item-object-page"><a href="#">GRANJ MAKAM TAKIM</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">ORFİSS</a></li>
-                              </ul>
+                  <li class="menu-item menu-blog"><a href="#">KATEGORİLER</a>
+                      <ul class="sub-menu">
+                           {% for i in tumu %}
+                          <li class="menu-item">
+                              <a href="#">{{ i.title }}</a>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                          {% endfor %}
+                          <li class="menu-item">
                               <a href="#">YÖNETİCİ TAKIMLARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD YÖNETİCİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">ORFİS YÖNETİCİ</a></li>
-                              </ul>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                          <li class="menu-item">
                               <a href="#">ÇALIŞMA MASALARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ</a></li>
-                              </ul>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                          <li class="menu-item">
                               <a href="#">iŞ İSTASYONLARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">ORFİS</a></li>
-                              </ul>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                          <li class="menu-item">
                               <a href="#">TOPLANTI MASALARI</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD TOPLANTILAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ TOPLANTILAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">ORFİS TOPLANTILAR</a></li>
-                              </ul>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                          <li class="menu-item">
                               <a href="#">BANKOLAR</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item menu-item-object-page"><a href="#">MARWOOD BANKOLAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MASACHİ BANKOLAR</a></li>
-                              </ul>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
-                              <ul class="menu_style_dropdown menu-item">
-                                  <li class="menu_style_dropdown menu-item"><a href="#">KİTAPLIKLAR</a></li>
-                                  <li class="menu_style_dropdown menu-item"><a href="#">YAN ÜRÜNLER</a></li>
-                              </ul>
+                           <li class="menu-item">
+                              <a href="#">KİTAPLIKLAR</a>
                           </li>
-                          <li class="menu_style_dropdown menu-item">
+                           <li class="menu-item">
+                              <a href="#">YAN ÜRÜNLER</a>
+                          </li>
+                          <li class="menu-item">
                               <a href="#">KANEPELER</a>
-                              <ul class="sub-menu">
-                                   <li class="menu-item menu-item-object-page"><a href="#">ÇOKLU BEKLEME KOLTUKLARI</a></li>
-                                    <li class="menu-item menu-item-object-page"><a href="#">FORSİT</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="#">MASACHİ</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="#">REFAKATÇİ VE DİNLENME</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">SOFFA</a></li>
-                              </ul>
                           </li>
-                           <li class="menu_style_dropdown menu-item">
+                           <li class="menu-item">
                               <a href="#">KOLTUK GRUBU</a>
-                              <ul class="sub-menu">
-                                   <li class="menu-item menu-item-object-page"><a href="#">AHŞAP KOLTUKLAR</a></li>
-                                    <li class="menu-item menu-item-object-page"><a href="#">BEKLEME KOLTUKLARI</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="#">KAFE BAR RESTORANT KOLTUKLARI</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="#">FİLE KOLTUKLAR</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">FORSİT KOLTUK</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">KOLSİT KOLTUK</a></li>
-                                     <li class="menu-item menu-item-object-page"><a href="#">KONFERANS SEMİNER</a></li>
-                                      <li class="menu-item menu-item-object-page"><a href="#">MASACHİ KOLTUK</a></li>
-                                  <li class="menu-item menu-item-object-page"><a href="#">MEZURA</a></li>
-                              </ul>
                           </li>
                       </ul>
                       </li>
-                      <li class="menu-item menu-blog"><a href="renkler.html">RENKLER</a>
+                      <li class="menu-item menu-blog"><a href="/colors">RENKLER</a>
                       </li>
-                      <li class="menu-item menu-blog"><a href="about-us.html">HAKKIMIZDA</a>
+                      <li class="menu-item menu-blog"><a href="/aboutus">HAKKIMIZDA</a>
                       </li>
-                      <li class="menu-item menu-blog"><a href="contact-us.html">İLETİŞİM</a>
+                      <li class="menu-item menu-blog"><a href="/contactus">İLETİŞİM</a>
                       </li>
                     </ul>
                   </li>
