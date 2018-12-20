@@ -19,10 +19,10 @@ class YeniKategoriForm(ModelForm):
 
 class YeniKoleksiyonKategoriForm(ModelForm):
     class Meta:
-        model = Kategori
+        model = KoleksiyonKategori
 
         def save(self, user):
-            yeni = Kategori()
+            yeni = KoleksiyonKategori()
             yeni.title = self.cleaned_data.get('title')
             yeni.save()
 
@@ -96,9 +96,9 @@ class Yenifootertablo(ModelForm):
 
         def save(self, user):
             yeni = Footer()
-            yeni.title = self.cleaned_data.get('slogan')
-            yeni.title = self.cleaned_data.get('adres')
-            yeni.title = self.cleaned_data.get('telefon')
+            yeni.slogan = self.cleaned_data.get('slogan')
+            yeni.adres = self.cleaned_data.get('adres')
+            yeni.telefon = self.cleaned_data.get('telefon')
             yeni.email = self.cleaned_data.get('email')
             yeni.save()
 

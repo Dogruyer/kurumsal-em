@@ -32,7 +32,7 @@ class Kartlar(models.Model):
 # sonra acilacak
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = models.CharField(max_length=100)
     blog_image = models.ImageField(upload_to='static/images/blog/',
                                    default='static/images/blog/default.jpg')
 

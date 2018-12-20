@@ -47,6 +47,24 @@ urlpatterns = patterns('',
 
 
 
+                       url(r'^koleksiyonkategoritablo$',
+                           'panel.views.koleksiyonkategoritablo',
+                           name='koleksiyonkategoritablo'),
+
+                       url(r'^koleksiyonkategoriekle$',
+                           'panel.views.koleksiyonkategoriekle',
+                           name='koleksiyonkategoriekle'),
+
+                       url(r'^koleksiyonkategoriduzenle/(?P<id>\w+)$',
+                           'panel.views.koleksiyonkategoriduzenle',
+                           name='koleksiyonkategoriduzenle'),
+
+                       url(r'^koleksiyonkategorisil/(?P<id>\w+)$',
+                           'panel.views.koleksiyonkategorisil',
+                           name='koleksiyonkategorisil'),
+
+
+
 
                        url(r'^altkategoriresimtablo$',
                            'panel.views.altkategoriresimtablo',
@@ -98,8 +116,12 @@ urlpatterns = patterns('',
                            name='kartekle'),
 
                        url(r'^kartduzenle/(?P<id>\w+)$',
-                           'panel.views.karttablo',
-                           name='kartekle'),
+                           'panel.views.kartduzenle',
+                           name='kartduzenle'),
+
+                       url(r'^kartsil/(?P<id>\w+)$',
+                           'panel.views.kartsil',
+                           name='kartsil'),
 
 
 
@@ -118,6 +140,9 @@ urlpatterns = patterns('',
                            'panel.views.blogduzenle',
                            name='blogduzenle'),
 
+                       url(r'^blogsil/(?P<id>\w+)$',
+                           'panel.views.blogsil',
+                           name='blogsil'),
 
 
 
@@ -131,10 +156,14 @@ urlpatterns = patterns('',
                            'panel.views.footerekle',
                            name='footerekle'),
 
-
                        url(r'^footerduzenle/(?P<id>\w+)$',
                            'panel.views.footerduzenle',
                            name='footerduzenle'),
+
+                       url(r'^footersil/(?P<id>\w+)$',
+                           'panel.views.footersil',
+                           name='footersil'),
+
 
 
 
@@ -156,6 +185,10 @@ urlpatterns = patterns('',
                            'panel.views.kategoribannerduzenle',
                            name='kategoribannerduzenle'),
 
+                       url(r'^kategoribannersil/(?P<id>\w+)$',
+                           'panel.views.kategoribannersil',
+                           name='kategoribannersil'),
+
 
 
 
@@ -173,6 +206,9 @@ urlpatterns = patterns('',
                            'panel.views.renklerduzenle',
                            name='renklerduzenle'),
 
+                       url(r'^renklersil/(?P<id>\w+)$',
+                           'panel.views.renklersil',
+                           name='renklersil'),
 
 
 
@@ -190,60 +226,9 @@ urlpatterns = patterns('',
                            'panel.views.hakkimizdaduzenle',
                            name='hakkimizdaduzenle'),
 
-
-
-
-
-
-
-
-
-
-
-                       url(r'^anakategorilertablo$',
-                           'panel.views.anakategorilertablo',
-                           name='anakategorilertablo'),
-
-                       url(r'^anasayfakategoritablo$',
-                           'panel.views.anasayfakategoritablo',
-                           name='anasayfakategoritablo'),
-
-                       url(r'^basicform$',
-                           'panel.views.basicform',
-                           name='basicform'),
-
-                       url(r'^iletisimform$',
-                           'panel.views.iletisimform',
-                           name='iletisimform'),
-
-                       url(r'^iletisimtablo$',
-                           'panel.views.iletisimtablo',
-                           name='iletisimtablo'),
-
-                       url(r'^onecikanlartablo$',
-                           'panel.views.onecikanlartablo',
-                           name='onecikanlartablo'),
-
-                       url(r'^uploadform$',
-                           'panel.views.uploadform',
-                           name='uploadform'),
-
-
-                       url(r'^altkategorilerresim$',
-                           'panel.views.altkategorilerresim',
-                           name='altkategorilerresim'),
-
-
-
-
-                       url(r'^bannerekle$',
-                           'panel.views.bannerekle',
-                           name='bannerekle'),
-
-                       url(r'^bannerduzenle/(?P<id>\w+)$',
-                           'panel.views.bannerduzenle',
-                           name='bannerduzenle'),
-
+                       url(r'^hakkimizdasil/(?P<id>\w+)$',
+                           'panel.views.hakkimizdasil',
+                           name='hakkimizdasil'),
 
 
 
