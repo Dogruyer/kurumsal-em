@@ -60,6 +60,10 @@ urlpatterns = patterns('',
                            'panel.views.altkategoriresimduzenle',
                            name='altkategoriresimduzenle'),
 
+                       url(r'^altkategoriresimsil/(?P<id>\w+)$',
+                           'panel.views.altkategoriresimsil',
+                           name='altkategoriresimsil'),
+
 
 
 

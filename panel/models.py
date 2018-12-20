@@ -7,6 +7,9 @@ class Slider(models.Model):
 class Kategori(models.Model):
     title = models.CharField(max_length=100)
 
+class KoleksiyonKategori(models.Model):
+    title = models.CharField(max_length=100)
+
 class Kategori_bolumu(models.Model):
     title = models.CharField(max_length=100)
     kategori_image = models.ImageField(upload_to='images/kategori/',
@@ -15,7 +18,7 @@ class Kategori_bolumu(models.Model):
 class Koleksiyonlar(models.Model):
     koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
                                           default='static/images/koleksiyonlar/default.jpg')
-    kategori = models.ForeignKey(Kategori)
+    koleksiyonkategori = models.ForeignKey(KoleksiyonKategori)
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
 

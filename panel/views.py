@@ -93,8 +93,6 @@ def altkategoriresimduzenle(request, id):
         duzenlenecek.save()
 
         return redirect(reverse(altkategoriresimtablo))
-    # form = YeniBannerForm(initial={'title': duzenlenecek.title,
-    #                                'banner_image': duzenlenecek.banner_image})
 
     c = {"adi": adi,
          "gorseli": gorseli}
@@ -155,26 +153,84 @@ def kategorisil(request, id):
 
 
 
+def koleksiyonkategoritablo(request):
+    tumu = KoleksiyonKategori.objects.all()
+    c = {"tumu": tumu}
+    return render(request, "panel/koleksiyonkategoritablo.html", c)
+
+def koleksiyonkategoriekle(request):
+    if request.POST:
+        form = YeniKoleksiyonKategoriForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect(reverse(koleksiyonkategoritablo))
+
+    form = YeniKoleksiyonKategoriForm()
+
+    c = {"form": form,
+         "request": request}
+
+    c.update(csrf(request))
+
+    return render(request, "panel/koleksiyonkategoriekle.html", c)
+
+def koleksiyonkategoriduzenle(request, id):
+    duzenlenecek = KoleksiyonKategori.objects.get(id=id)
+
+    adi = duzenlenecek.title
+
+    if request.POST:
+        duzenlenecek.title = request.POST["title"]
+
+        duzenlenecek.save()
+
+        return redirect(reverse(koleksiyonkategoritablo))
+
+    c = {"adi": adi}
+
+    return render(request, "panel/koleksiyonkategoriduzenle.html", c)
+
+def koleksiyonkategorisil(request, id):
+    duzenlenecek = KoleksiyonKategori.objects.get(id=id)
+    duzenlenecek.delete()
+
+    return redirect(reverse(koleksiyonkategoritablo))
+
+
+
+
+
+
+
 def koleksiyontablo(request):
     tumu = Koleksiyonlar.objects.all()
     c = {"tumu": tumu}
     return render(request, "panel/koleksiyontablo.html", c)
 
 def koleksiyonekle(request):
+    tumkategoriler = KoleksiyonKategori.objects.all()
     if request.POST:
         form = Yenikoleksiyontablo(request.POST, request.FILES)
-        kategori = request.POST["kategori"]
-        kategori_nesne = Kategori.objects.get(title=kategori)
+        koleksiyonkategori = request.POST["koleksiyonkategori"]
+        kategori_nesne = KoleksiyonKategori.objects.get(id=koleksiyonkategori)
 
 
         if form.is_valid():
-            form.save(kategori_nesne)
+            yeni = Koleksiyonlar()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.content = form.cleaned_data.get('content')
+            yeni.image = form.cleaned_data.get('koleksiyon_image')
+            yeni.kategori_id = kategori_nesne
+            yeni.save()
 
-            return HttpResponse("Basarili")
+            return redirect(reverse(koleksiyontablo))
 
     form = Yenikoleksiyontablo()
 
     c = {"form": form,
+         "tumkategoriler" : tumkategoriler,
          "request": request}
 
     c.update(csrf(request))
@@ -195,10 +251,7 @@ def koleksiyonduzenle(request, id):
 
         duzenlenecek.save()
 
-        return HttpResponse("basarili")
-
-    # form = YeniBannerForm(initial={'title': duzenlenecek.title,
-    #                                'banner_image': duzenlenecek.banner_image})
+        return redirect(reverse(koleksiyontablo))
 
     c = {"adi": adi,
          "gorseli": gorseli,
@@ -210,7 +263,7 @@ def koleksiyonsil(request, id):
     duzenlenecek = Koleksiyonlar.objects.get(id=id)
     duzenlenecek.delete()
 
-    return HttpResponse("silindi")
+    return redirect(reverse(koleksiyontablo))
 
 
 
@@ -434,10 +487,6 @@ def kategoribannerduzenle(request, id):
         duzenlenecek.save()
 
         return redirect(reverse(kategoribannertablo))
-
-    # form = YeniBannerForm(initial={'title': duzenlenecek.title,
-    #                                'banner_image': duzenlenecek.banner_image})
-
     c = {"adi": adi,
          "gorseli": gorseli,
          "content": content}

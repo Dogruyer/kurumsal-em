@@ -17,6 +17,15 @@ class YeniKategoriForm(ModelForm):
             yeni.title = self.cleaned_data.get('title')
             yeni.save()
 
+class YeniKoleksiyonKategoriForm(ModelForm):
+    class Meta:
+        model = Kategori
+
+        def save(self, user):
+            yeni = Kategori()
+            yeni.title = self.cleaned_data.get('title')
+            yeni.save()
+
 
 class YeniBannerForm(ModelForm):
     class Meta:
@@ -39,7 +48,7 @@ class YeniSliderForm(ModelForm):
 
 class Yenialtkategoriresimtablo(ModelForm):
     class Meta:
-        model = Kategori
+        model = Kategori_bolumu
 
         def save(self, user):
             yeni = Kategori()
@@ -50,13 +59,14 @@ class Yenialtkategoriresimtablo(ModelForm):
 class Yenikoleksiyontablo(ModelForm):
     class Meta:
         model = Koleksiyonlar
+        exclude = ["koleksiyonkategori"]
 
         def save(self, kategori_nesne):
             yeni = Koleksiyonlar()
             yeni.title = self.cleaned_data.get('title')
             yeni.content = self.cleaned_data.get('content')
             yeni.image = self.cleaned_data.get('koleksiyon_image')
-            yeni.kategori = kategori_nesne
+            yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
 
 class Yenikarttablo(ModelForm):
