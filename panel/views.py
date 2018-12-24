@@ -57,6 +57,7 @@ def slaytsil(request, id):
 
 
 
+
 def altkategoriresimtablo(request):
     tumu = Kategori_bolumu.objects.all()
     c = {"tumu": tumu}
@@ -106,6 +107,8 @@ def altkategoriresimsil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(altkategoriresimtablo))
+
+
 
 
 def kategoritablo(request):

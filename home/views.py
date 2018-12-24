@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 from django.shortcuts import render_to_response,render,HttpResponse
 from django.core.context_processors import csrf
-
 from django.shortcuts import render
 from django.shortcuts import render, HttpResponse, render_to_response, redirect
 from django.core.urlresolvers import reverse
@@ -10,8 +9,15 @@ from panel.models import *
 from django.core.context_processors import csrf
 
 def home(request):
-    tumu = Kategori.objects.all()
-    c = {"tumu": tumu}
+    kategori = Kategori.objects.all()
+    slider = Slider.objects.all()
+    banner = Banner.objects.all()
+    banner_uzunluk = len(banner)
+    ilk_banner = banner[banner_uzunluk-1]
+    ikinci_banner = banner[banner_uzunluk-2]
+
+    c = {"kategori": kategori,
+         "slider": slider}
     return render(request, "home/index.html", c)
 
 def shop(request):
@@ -28,3 +34,4 @@ def aboutus(request):
 
 def contactus(request):
     return render(request, "home/contactus.html")
+

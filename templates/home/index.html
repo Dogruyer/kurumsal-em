@@ -7,18 +7,13 @@ Index
         <div class="section">
           <div class="slide-home slide-home-1">
             <div data-number="1" data-margin="100" data-loop="yes" data-navcontrol="yes" class="sofani-owl-carousel">
-              <div class="slide1">
-                <div class="slide1-left">
-                </div>
-                <div class="slide1-right">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/Aras.jpg" alt="slide" height="400"/></figure>
-                </div>
-              </div>
+                {% for i in slider %}
               <div class="slide2">
-                <div class="slide2-bg"><img src="{{STATIC_URL}}home/assets/images/demo/EFES L DÖRTLÜ MASA.jpg"  alt="bg" height="400"/></div>
+                <div class="slide2-bg"><img src="{{MEDIA_URL}}{{ i.slider_image }}"  alt="bg" height="400"/></div>
                 <div class="slde2-content">
                 </div>
               </div>
+                {% endfor %}
             </div>
           </div>
         </div>
