@@ -16,16 +16,16 @@ class Kategori_bolumu(models.Model):
                               default='images/kategori/default.jpg')
 
 class Koleksiyonlar(models.Model):
-    koleksiyon_image = models.ImageField(upload_to='static/images/koleksiyonlar/',
-                                          default='static/images/koleksiyonlar/default.jpg')
+    koleksiyon_image = models.ImageField(upload_to='images/koleksiyonlar/',
+                                          default='images/koleksiyonlar/default.jpg')
     koleksiyonkategori = models.ForeignKey(KoleksiyonKategori)
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
 
 
 class Kartlar(models.Model):
-    kart_image = models.ImageField(upload_to='static/images/kartlar/',
-                                   default='static/images/kartlar/default.jpg')
+    kart_image = models.ImageField(upload_to='images/kartlar/',
+                                   default='images/kartlar/default.jpg')
     title = models.CharField(max_length=100)
 
 
@@ -33,8 +33,8 @@ class Kartlar(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
-    blog_image = models.ImageField(upload_to='static/images/blog/',
-                                   default='static/images/blog/default.jpg')
+    blog_image = models.ImageField(upload_to='images/blog/',
+                                   default='images/blog/default.jpg')
 
 
 class Footer(models.Model):
@@ -45,31 +45,24 @@ class Footer(models.Model):
 
 
 class Urun(models.Model):
-    urun_image = models.ImageField(upload_to='static/images/urun/',
-                                   default='static/images/urun/default.jpg')
+    urun_image = models.ImageField(upload_to='images/urun/',
+                                   default='images/urun/default.jpg')
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
     kategori_id = models.ForeignKey(Kategori)
 
 
 class Renkler(models.Model):
-    renk_image = models.ImageField(upload_to='static/images/renkler/',
-                                   default='static/images/renkler/default.jpg')
+    renk_image = models.ImageField(upload_to='images/renkler/',
+                                   default='images/renkler/default.jpg')
     title = models.CharField(max_length=100)
 
 
 class Hakkimizda(models.Model):
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
-    hakkimizda_gorsel = models.ImageField(upload_to='static/images/hakkimizda/',
-                                          default='static/images/hakkimizda/default.jpg')
-    sayfa_gorseli = models.ImageField(upload_to='static/images/hakkimizda/',
-                                      default='static/images/hakkimizda/default.jpg')
+    hakkimizda_gorsel = models.ImageField(upload_to='images/hakkimizda/',
+                                          default='images/hakkimizda/default.jpg')
+    sayfa_gorseli = models.ImageField(upload_to='images/hakkimizda/',
+                                      default='images/hakkimizda/default.jpg')
 
-class Banner(models.Model):
-    title = models.CharField(max_length=100)
-    banner_image = models.ImageField(upload_to='static/images/banner/',
-                                     default='static/images/banner/default.jpg')
-
-class Mail(models.Model):
-    email = models.EmailField(max_length=200)

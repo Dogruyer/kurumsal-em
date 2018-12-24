@@ -3,11 +3,6 @@ from django.forms.models import ModelForm
 from .models import *
 
 
-class BasicForm(ModelForm):
-    class Meta:
-        model = Mail
-
-
 class YeniKategoriForm(ModelForm):
     class Meta:
         model = Kategori
@@ -26,16 +21,6 @@ class YeniKoleksiyonKategoriForm(ModelForm):
             yeni.title = self.cleaned_data.get('title')
             yeni.save()
 
-
-class YeniBannerForm(ModelForm):
-    class Meta:
-        model = Banner
-
-        def save(self, user):
-            yeni = Banner()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.image = self.cleaned_data.get('banner_image')
-            yeni.save()
 
 class YeniSliderForm(ModelForm):
     class Meta:

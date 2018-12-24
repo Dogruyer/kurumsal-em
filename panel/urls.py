@@ -195,8 +195,8 @@ urlpatterns = patterns('',
 
 
                        url(r'^renklertablo$',
-                           'panel.views.tumbannerlar',
-                           name='tumbannerlar'),
+                           'panel.views.renklertablo',
+                           name='renklertablo'),
 
                        url(r'^renklerekle$',
                            'panel.views.renklerekle',
