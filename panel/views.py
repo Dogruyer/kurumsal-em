@@ -235,7 +235,7 @@ def koleksiyonekle(request):
 
 def koleksiyonduzenle(request, id):
     duzenlenecek = Koleksiyonlar.objects.get(id=id)
-    tumu = KoleksiyonKategori.objects.get()
+    tumu = KoleksiyonKategori.objects.all()
     adi = duzenlenecek.title
     gorseli = duzenlenecek.koleksiyon_image
     content = duzenlenecek.content
@@ -472,7 +472,6 @@ def kategoribannerduzenle(request, id):
     adi = duzenlenecek.title
     content = duzenlenecek.content
     gorseli = duzenlenecek.urun_image
-    kategori = tumkategoriler.title
 
     if request.POST:
         duzenlenecek.title = request.POST["title"]

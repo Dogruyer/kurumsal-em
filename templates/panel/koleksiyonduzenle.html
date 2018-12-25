@@ -45,7 +45,14 @@
                                         <input type="file" name="koleksiyon_image">
                                     </div>
                                 </div>
-                                  <select class="form-control" id = "koleksiyonkategori" name = "koleksiyonkategori">s
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" name="{{ kategori }}" value="{{ kategori }}" readonly>
+                                    </div>
+                                </div>
+
+                                  <select class="form-control" id = "koleksiyonkategori" name = "koleksiyonkategori">
+                                       <option id = "0" name = "0" value = "0"></option>
                                         {% for k in tumu %}
                                             <option id = "{{k.id}}" name = "{{k.id}}" value = "{{k.id}}"> {{ k.title }} </option>
                                          {% endfor %}
