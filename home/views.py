@@ -10,9 +10,12 @@ from panel.models import *
 from django.core.context_processors import csrf
 
 def home(request):
+    footer = Footer.objects.all()
     kategori = Kategori.objects.all()
-
     slider = Slider.objects.all()
+    kart = Kartlar.objects.all()
+    blog = Blog.objects.all()
+
 
     altresim = Kategori_bolumu.objects.all()
     altresim_uzunluk = len(altresim)
@@ -27,6 +30,9 @@ def home(request):
 
     c = {"kategori": kategori,
          "slider": slider,
+         "kart": kart,
+         "blog": blog,
+         "footer": footer,
          "altresim": altresim,
          "ilk_banner": ilk_banner,
          "ikinci_banner": ikinci_banner,
@@ -37,17 +43,40 @@ def home(request):
 
     return render(request, "home/index.html", c)
 
-def shop(request):
-    return render(request, "home/shop.html")
+def shop(request, id):
+    footer = Footer.objects.all()
+    kategori = Kategori.objects.all()
+    urun = Urun.objects.filter(kategori_id=id)
+
+    c = {"kategori": kategori,
+         "footer": footer,
+         "urun": urun,
+         'request': request}
+    return render(request, "home/shop.html", c)
 
 def productdetail(request):
     return render(request, "home/productdetail.html")
 
 def colors(request):
-    return render(request, "home/colors.html")
+    footer = Footer.objects.all()
+    kategori = Kategori.objects.all()
+    renk = Renkler.objects.all()
+
+    c = {"kategori": kategori,
+         "footer": footer,
+         "renk": renk}
+
+    return render(request, "home/colors.html", c)
 
 def aboutus(request):
-    return render(request, "home/aboutus.html")
+    footer = Footer.objects.all()
+    kategori = Kategori.objects.all()
+    hakkimizda = Hakkimizda.objects.all()
+
+    c = {"kategori": kategori,
+         "footer": footer,
+         "hakkimizda": hakkimizda}
+    return render(request, "home/aboutus.html", c)
 
 def contactus(request):
     return render(request, "home/contactus.html")

@@ -10,7 +10,11 @@ urlpatterns = patterns('',
                           'home.views.home',
                           name='home'),
 
-                       url(r'^shop$',
+                       url(r'^$',
+                          'home.views.home',
+                          name='startup'),
+
+                       url(r'^shop/(?P<id>\w+)$',
                           'home.views.shop',
                           name='shop'),
 

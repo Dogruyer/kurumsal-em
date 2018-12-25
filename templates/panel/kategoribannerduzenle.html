@@ -48,12 +48,12 @@
                                 <div class="control-group">
                                     <label>Title</label>
                                     <div class="controls">
-                                        <select>
-                                            <option value=""></option>
+                                       <select class="form-control" id = "kategori" name = "kategori">
+                                        {% for k in tumkategoriler %}
+                                            <option id = "{{k.id}}" name = "{{k.id}}" value = "{{k.id}}"> {{ k.title }} </option>
+                                         {% endfor %}
                                         </select>
-
-
-                                        <input type="text" name="title" value="{{ kategori.title }}">
+                                        <br/>
                                     </div>
                                 </div>
 

@@ -37,11 +37,13 @@ Shop
                         </div>
                         <div class="desc-review-content tab-content clearfix">
                             <div id="1a" class="tab-pane active">
+
+                                {% for i in urun %}
                                 <div class="product-item-wrap has-post-thumbnail">
                                     <div class="product-item-inner">
                                         <div class="product-thumb">
                                             <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/1.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
+                                            <img src="{{MEDIA_URL}}{{ i.urun_image }}" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
                                         </div>
                                         <div class="product-hover-sign">
                                             <hr />
@@ -53,239 +55,13 @@ Shop
                                         </div>
                                     </div>
                                     <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>799.00</span></span><a href="#" target="_blank">
-                                            <h3>Sicily Chair</h3>
+                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>{{ i.content }}</span></span><a href="#" target="_blank">
+                                            <h3>{{ i.title }}</h3>
                                         </a>
                                     </div>
                                 </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"><span class="on-sale product-flash">8.8%</span><span class="on-sale product-flash">Sale</span></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/2.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price">
-                                            <del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>499.00</span></del><ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>455.00</span></ins>
-                                        </span><a href="#" target="_blank">
-                                            <h3>Nefil Mesh Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/3.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                           <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                       <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>599.00</span></span><a href="#">
-                                            <h3>Ergohuman Mesh Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/4.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                           <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                      <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>139.00</span></span><a href="#" target="_blank">
-                                            <h3>Ottoman Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/5.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                        <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>170.00</span></span><a href="#" target="_blank">
-                                            <h3>Coffee Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/6.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                          <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>229.00</span></span><a href="#">
-                                            <h3>Occasional Arm Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/7.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                       <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>139.00</span></span><a href="#">
-                                            <h3>Occasional Size Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/9.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                        <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                      <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>139.00</span></span><a href="#">
-                                            <h3>Occasional Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/10.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>199.00</span></span><a href="#">
-                                            <h3>Costes Armchair</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"><span class="on-sold product-flash">Sold</span></div>
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/11.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                            <a href="products-list.html" class="product_type_soldout btn_add_to_cart"><i class="fa fa-shopping-cart"></i></a><a href="#" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                       <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>199.00</span></span><a href="#" target="_blank">
-                                            <h3>Ecko Chair – Fabric</h3>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="product-item-wrap has-post-thumbnail">
-                                    <div class="product-item-inner">
-                                        <div class="product-thumb">
-                                            <div class="product-flash-wrap"></div>
-                                            <div class="product-flash-wrap"></div>
-                                            <img src="{{STATIC_URL}}home/assets/images/urunler/13.jpg" style="height: 270px; width: 270px;" class="attachment-shop_catalog size-shop_catalog wp-post-image" />
-                                        </div>
-                                        <div class="product-hover-sign">
-                                            <hr />
-                                            <hr />
-                                        </div>
-                                        </a>
-                                        <div class="product-actions">
-                                          <a href="products-list.html" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>139.00</span></span><a href="#">
-                                            <h3>Occasional Chair</h3>
-                                        </a>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
-
                         </div>
                     </div>
                 </div>

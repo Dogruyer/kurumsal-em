@@ -92,13 +92,6 @@ class Yenikategoribannertablo(ModelForm):
         model = Urun
         exclude = ["kategori_id"]
 
-        def save(self, kategori_getir):
-            yeni = Urun()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.content = self.cleaned_data.get('content')
-            yeni.image = self.cleaned_data.get('urun_image')
-            yeni.kategori_id = kategori_getir
-            yeni.save()
 
 class Yenirenklertablo(ModelForm):
     class Meta:

@@ -448,9 +448,10 @@ def kategoribannerekle(request):
             yeni = Urun()
             yeni.title = form.cleaned_data.get('title')
             yeni.content = form.cleaned_data.get('content')
-            yeni.image = form.cleaned_data.get('urun_image')
+            yeni.urun_image = request.FILES["urun_image"]
             yeni.kategori_id = kategori_getir
             yeni.save()
+
 
             return redirect(reverse(kategoribannertablo))
 
@@ -465,21 +466,23 @@ def kategoribannerekle(request):
     return render(request, "panel/kategoribannerekle.html", c)
 
 def kategoribannerduzenle(request, id):
+    tumkategoriler = Kategori.objects.all()
     duzenlenecek = Urun.objects.get(id=id)
 
     adi = duzenlenecek.title
     content = duzenlenecek.content
     gorseli = duzenlenecek.urun_image
+    kategori = tumkategoriler.title
 
     if request.POST:
         duzenlenecek.title = request.POST["title"]
         duzenlenecek.content = request.POST["content"]
         duzenlenecek.urun_image = request.FILES["urun_image"]
-
         duzenlenecek.save()
 
         return redirect(reverse(kategoribannertablo))
     c = {"adi": adi,
+         "kategori": kategori,
          "gorseli": gorseli,
          "content": content}
 

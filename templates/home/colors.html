@@ -18,11 +18,12 @@ SHOP
               </div>
               <div class="desc-review-content tab-content clearfix">
                 <div id="1a" class="tab-pane active">
+                  {% for i in renk %}
                   <div class="product-item-wrap has-post-thumbnail">
                     <div class="product-item-inner">
                       <div class="product-thumb">
                         <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/ANTİK DARK.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
+                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{MEDIA_URL}}{{ i.renk_image }}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
 
                           <div class="product-hover-sign">
                             <hr/>
@@ -31,182 +32,11 @@ SHOP
 
                       </div>
                       <div class="product-info">
-                          <h3><b>Anti Dark</b></h3></a>
+                          <h3><b>{{ i.title }}</b></h3></a>
                       </div>
                     </div>
                   </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary" style="width: 270px !important; height: 270px !important;" ><img width="270" height="270" src="{{STATIC_URL}}home/assets/images/demo/ANTRASİT GRİ.jpg" alt="42" title="42" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-
-                          <h3><b> Antrasit Gri</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary" style="width: 270px !important; height: 270px !important;"><img width="270" height="270" src="{{STATIC_URL}}home/assets/images/demo/VENEZİA.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Venezia</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary" style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/TEAK.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3> <b>TEAK</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/barok.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Barok</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/marbella kiraz.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Marbella Kiraz</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/messina.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Messina</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/NATURAL MEŞE.png" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Natural Meşe</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/SAFİR MEŞE.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Safir Meşe</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/SİYAH.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>Siyah</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-item-wrap has-post-thumbnail">
-                    <div class="product-item-inner">
-                      <div class="product-thumb">
-                        <div class="product-flash-wrap"></div>
-                        <div class="product-thumb-primary"  style="width: 270px !important; height: 270px !important;"><img width="300" height="400" src="{{STATIC_URL}}home/assets/images/demo/teak.jpg" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-
-                          <div class="product-hover-sign">
-                            <hr/>
-
-                          </div></a>
-
-                      </div>
-                      <div class="product-info">
-                          <h3><b>teak</b></h3></a>
-                      </div>
-                    </div>
-                  </div>
-
+                  {% endfor %}
                 </div>
             </div>
         </div>

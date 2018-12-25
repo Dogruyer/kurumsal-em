@@ -76,9 +76,9 @@
                   <li class="menu-item menu-blog"><a href="#">KATEGORİLER</a>
                       <ul class="sub-menu">
                            {% for i in kategori %}
-                          <li class="menu-item">
-                              <a href="#">{{ i.title }}</a>
-                          </li>
+                              <li class="menu-item">
+                                  <a href="/shop/{{ i.id }}">{{ i.title }}</a>
+                              </li>
                           {% endfor %}
                           <li class="menu-item">
                               <a href="#">YÖNETİCİ TAKIMLARI</a>
@@ -138,20 +138,20 @@
                   <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
                   <li><a href="#"><i class="fa fa-rss"></i></a></li>
                 </ul>
-                <p class="desc"><strong>Ekip Mobilya 1989 yilinda kurulmuş olup 20 yıldır ofis mobilyası ve dekorasyon <br> sektöründe kalite ve güvenilirliği ile hizmet vermektedir.</strong></p>
+                  {% for i in footer %}
+                <p class="desc"><strong>{{ i.slogan }}</strong></p>
                 <div class="div-icon-box">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="icon-box icon-box-style2">
                         <div class="icon-box-left"><i class="fa fa-map-marker"></i></div>
-                        <div class="icon-box-right"><span>Gürsel Mah. Kağıthane Cad. No:78 Kağıthane / İSTANBUL </span></div>
+                        <div class="icon-box-right"><span>{{ i.adres }} </span></div>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="icon-box icon-box-style2">
                         <div class="icon-box-left"><i class="fa fa-phone"></i></div>
-                        <div class="icon-box-right"><span>Telefon : +90 (212) 210 88 10 <br>
-                          Telefon : +90 (212) 220 35 98 <br>
+                        <div class="icon-box-right"><span>{{ i.telefon }}<br>
                           Fax : +90 (212) 210 88 09 <br>
                           Gsm : +90 (532) 397 88 95</span></div>
                       </div>
@@ -159,8 +159,9 @@
                     <div class="col-md-4">
                       <div class="icon-box icon-box-style2">
                         <div class="icon-box-left"><i class="fa fa-envelope-o"></i></div>
-                        <div class="icon-box-right"><span>Email : ekip@ekipmobilya.com</span></div>
+                        <div class="icon-box-right"><span>Email : {{ i.telefon }} </span></div>
                       </div>
+                        {% endfor %}
                     </div>
                   </div>
                 </div>
