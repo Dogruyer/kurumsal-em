@@ -23,57 +23,31 @@
           <div class="row">
             <div class="col-md-6">
               <div id="sync1" class="owl-carousel owl-template">
+                {% for i in detail %}
                 <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-1.jpg" alt="slide" width="540" height="700"/></figure>
+                  <figure><img src="{{MEDIA_URL}}{{ i.urun_image }}" alt="slide" width="540" height="700"/></figure>
                 </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-2.jpg" alt="slide" width="540" height="700"/></figure>
-                </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-3.jpg" alt="slide" width="540" height="700"/></figure>
-                </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-4.jpg" alt="slide" width="540" height="700"/></figure>
-                </div>
+                {% endfor %}
               </div>
               <div id="sync2" class="owl-carousel owl-template">
+                {% for i in detail %}
                 <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-small-1.jpg" alt="slide" width="180" height="220"/></figure>
+                  <figure><img src="{{MEDIA_URL}}{{ i.urun_image }}" alt="slide" width="180" height="220"/></figure>
                 </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-small-2.jpg" alt="slide" width="180" height="220"/></figure>
-                </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-small-3.jpg" alt="slide" width="180" height="220"/></figure>
-                </div>
-                <div class="item">
-                  <figure><img src="{{STATIC_URL}}home/assets/images/demo/slide-small-4.jpg" alt="slide" width="180" height="220"/></figure>
-                </div>
+                {% endfor %}
               </div>
             </div>
             <div class="col-md-6">
               <div class="summary-product entry-summary">
-                <h1 class="product_title">Baxter Cleansing Bar</h1>
+                {% for i in detail %}
+                <h1 class="product_title">{{ i.title }}</h1>
+                {% endfor %}
                 <div class="woocommerce-product-rating"></div>
-                <div class="rate-price">
-                  <div class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div><a href="#" class="woocommerce-review-link">(1 review)</a>
-                  <p class="price"><span>$339.00</span></p>
-                </div>
                 <div class="product-single-short-description">
-                  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                  {% for i in detail %}
+                  <p>{{ i.content }}</p>
+                  {% endfor %}
                 </div>
-                <form method="post" enctype="multipart/form-data" class="cart">
-                  <div class="quantity">
-                    <div class="quantity-inner">
-                      <input step="1" min="1" name="quantity" value="1" title="Qty" size="4" type="number" class="input-text qty text"/>
-                    </div>
-                  </div>
-                  <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
-                </form>
-                <div class="product_meta"><span class="sku_wrapper">
-                    <label>SKU:</label><span class="sku">SE-26</span>.</span><span class="product-stock-status-wrapper">
-                    <label>Availability:</label><span class="product-stock-status in-stock">In stock</span></span><span class="posted_in">
-                    <label>Category:</label><a href="#">Essential</a>.</span></div>
                 <div class="social-share-wrap">
                   <label>Follow us:</label>
                   <ul class="social-share">

@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, render_to_response, redirect
 from django.core.urlresolvers import reverse
+
 from .forms import *
 from .models import *
 from django.core.context_processors import csrf
@@ -212,12 +213,11 @@ def koleksiyonekle(request):
         koleksiyonkategori = request.POST["koleksiyonkategori"]
         kategori_nesne = KoleksiyonKategori.objects.get(id=koleksiyonkategori)
 
-
         if form.is_valid():
             yeni = Koleksiyonlar()
             yeni.title = form.cleaned_data.get('title')
             yeni.content = form.cleaned_data.get('content')
-            yeni.image = form.cleaned_data.get('koleksiyon_image')
+            yeni.koleksiyon_image = request.FILES['koleksiyon_image']
             yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
 
@@ -317,7 +317,6 @@ def kartsil(request, id):
 
 
 
-
 def blogtablo(request):
     tumu = Blog.objects.all()
     c = {"tumu": tumu}
@@ -368,8 +367,6 @@ def blogsil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(blogtablo))
-
-
 
 
 
@@ -427,8 +424,6 @@ def footersil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(footertablo))
-
-
 
 
 
@@ -495,8 +490,6 @@ def kategoribannersil(request, id):
 
 
 
-
-
 def renklertablo(request):
     tumu = Renkler.objects.all()
     c = {"tumu": tumu}
@@ -547,7 +540,6 @@ def renklersil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(renklertablo))
-
 
 
 
@@ -605,5 +597,109 @@ def hakkimizdasil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(hakkimizdatablo))
+
+
+
+def detailfototablo(request):
+    tumu = Detailfoto.objects.all()
+    c = {"tumu": tumu}
+
+    return render(request, "panel/detailfototablo.html", c)
+
+def detailfotoekle(request):
+    if request.POST:
+        form = YeniDetailfotoForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect(reverse(detailfototablo))
+
+    form = YeniDetailfotoForm()
+
+    c = {"form": form,
+         "request": request}
+
+    c.update(csrf(request))
+
+    return render(request, "panel/detailfotoekle.html", c)
+
+def detailfotoduzenle(request, id):
+    duzenlenecek = Detailfoto.objects.get(id=id)
+
+    gorseli = duzenlenecek.detail_image
+
+    if request.POST:
+        duzenlenecek.detail_image = request.FILES["detail_image"]
+
+        duzenlenecek.save()
+
+        return redirect(reverse(detailfototablo))
+
+    c = {"gorseli": gorseli}
+
+    return render(request, "panel/detailfotoduzenle.html", c)
+
+def detailfotosil(request, id):
+    duzenlenecek = Detailfoto.objects.get(id=id)
+    duzenlenecek.delete()
+
+    return redirect(reverse(detailfototablo))
+
+
+
+def detailfeaturetablo(request):
+    tumu = Detailfeature.objects.all()
+    c = {"tumu": tumu}
+    return render(request, "panel/detailfeaturetablo.html", c)
+
+def detailfeatureekle(request):
+    if request.POST:
+        form = YeniDetailfeatureForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect(reverse(detailfeaturetablo))
+
+    form = YeniDetailfeatureForm()
+
+    c = {"form": form,
+         "request": request}
+
+    c.update(csrf(request))
+
+    return render(request, "panel/detailfeatureekle.html", c)
+
+def detailfeatureduzenle(request, id):
+    duzenlenecek = Detailfeature.objects.get(id=id)
+
+    adi = duzenlenecek.title
+
+    if request.POST:
+        duzenlenecek.title = request.POST["title"]
+
+        duzenlenecek.save()
+
+        return redirect(reverse(detailfeaturetablo))
+
+    c = {"adi": adi}
+
+    return render(request, "panel/detailfeatureduzenle.html", c)
+
+def detailfeaturesil(request, id):
+    duzenlenecek = Detailfeature.objects.get(id=id)
+    duzenlenecek.delete()
+
+    return redirect(reverse(detailfeaturetablo))
+
+
+
+
+
+
+
+
+
 
 

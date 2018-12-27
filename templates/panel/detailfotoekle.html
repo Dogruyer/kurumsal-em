@@ -4,17 +4,17 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Notifications</h4> </div>
+                        <h4 class="page-title">Düzenleme Tablosu</h4>
+                    </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
+                        <a href="/panel/detailfototablo" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">TÜM SLAYTLAR</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Ui Elements</a></li>
-                            <li class="active">Notifications</li>
+                            <li><a href="#">ANASAYFA</a></li>
+                            <li><a href="#">SLİDER</a></li>
+                            <li class="active">RESİM</li>
                         </ol>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
                 <div class="row">
@@ -29,12 +29,6 @@
                                             <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" placeholder="{{field.label}}" class="form-control" />
                                             <br><br>
                                         {% endfor %}
-                                        <select class="form-control" id = "koleksiyonkategori" name = "koleksiyonkategori">
-                                        {% for k in tumkategoriler %}
-                                            <option id = "{{k.id}}" name = "{{k.id}}" value = "{{k.id}}"> {{ k.title }} </option>
-                                         {% endfor %}
-                                        </select>
-                                        <br/>
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
                                     </form>
@@ -43,6 +37,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- ============================================================== -->
             </div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by themedesigner.in </footer>

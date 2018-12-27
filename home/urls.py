@@ -18,7 +18,7 @@ urlpatterns = patterns('',
                           'home.views.shop',
                           name='shop'),
 
-                       url(r'^productdetail$',
+                       url(r'^productdetail/(?P<id>\w+)$',
                            'home.views.productdetail',
                            name='productdetail'),
 

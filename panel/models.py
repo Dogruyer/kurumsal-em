@@ -4,6 +4,7 @@ from django.db import models
 class Slider(models.Model):
     slider_image = models.ImageField(upload_to='images/slider/',
                                      default='images/slider/default.jpg')
+
 class Kategori(models.Model):
     title = models.CharField(max_length=100)
 
@@ -22,12 +23,10 @@ class Koleksiyonlar(models.Model):
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=100)
 
-
 class Kartlar(models.Model):
     kart_image = models.ImageField(upload_to='images/kartlar/',
                                    default='images/kartlar/default.jpg')
     title = models.CharField(max_length=100)
-
 
 # sonra acilacak
 class Blog(models.Model):
@@ -36,13 +35,11 @@ class Blog(models.Model):
     blog_image = models.ImageField(upload_to='images/blog/',
                                    default='images/blog/default.jpg')
 
-
 class Footer(models.Model):
-    slogan = models.CharField(max_length=100)
+    slogan = models.CharField(max_length=400)
     adres = models.CharField(max_length=100)
     telefon = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-
 
 class Urun(models.Model):
     urun_image = models.ImageField(upload_to='images/urun/',
@@ -51,12 +48,17 @@ class Urun(models.Model):
     content = models.CharField(max_length=100)
     kategori_id = models.ForeignKey(Kategori)
 
+class Detailfoto(models.Model):
+    detail_image = models.ImageField(upload_to='images/urun/',
+                                   default='images/urun/default.jpg')
+
+class Detailfeature(models.Model):
+    content = models.TextField()
 
 class Renkler(models.Model):
     renk_image = models.ImageField(upload_to='images/renkler/',
                                    default='images/renkler/default.jpg')
     title = models.CharField(max_length=100)
-
 
 class Hakkimizda(models.Model):
     title = models.CharField(max_length=100)

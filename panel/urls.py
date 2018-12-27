@@ -232,6 +232,42 @@ urlpatterns = patterns('',
 
 
 
+                       url(r'^detailfototablo$',
+                           'panel.views.detailfototablo',
+                           name='detailfototablo'),
+
+                       url(r'^detailfotoekle$',
+                           'panel.views.detailfotoekle',
+                           name='detailfotoekle'),
+
+                       url(r'^detailfotoduzenle/(?P<id>\w+)$',
+                           'panel.views.detailfotoduzenle',
+                           name='detailfotoduzenle'),
+
+                       url(r'^detailfotosil/(?P<id>\w+)$',
+                           'panel.views.detailfotosil',
+                           name='detailfotosil'),
+
+
+
+                       url(r'^detailfeaturetablo$',
+                           'panel.views.detailfeaturetablo',
+                           name='detailfeaturetablo'),
+
+                       url(r'^detailfeatureekle$',
+                           'panel.views.detailfeatureekle',
+                           name='detailfeatureekle'),
+
+                       url(r'^detailfeatureduzenle/(?P<id>\w+)$',
+                           'panel.views.detailfeatureduzenle',
+                           name='detailfeatureduzenle'),
+
+                       url(r'^detailfeaturesil/(?P<id>\w+)$',
+                           'panel.views.detailfeaturesil',
+                           name='detailfeaturesil'),
+
+
+
 
                        )
 

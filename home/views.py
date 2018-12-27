@@ -15,6 +15,7 @@ def home(request):
     slider = Slider.objects.all()
     kart = Kartlar.objects.all()
     blog = Blog.objects.all()
+    koleksiyon = Koleksiyonlar.objects.all()
 
 
     altresim = Kategori_bolumu.objects.all()
@@ -32,6 +33,7 @@ def home(request):
          "slider": slider,
          "kart": kart,
          "blog": blog,
+         "koleksiyon": koleksiyon,
          "footer": footer,
          "altresim": altresim,
          "ilk_banner": ilk_banner,
@@ -54,8 +56,14 @@ def shop(request, id):
          'request': request}
     return render(request, "home/shop.html", c)
 
-def productdetail(request):
-    return render(request, "home/productdetail.html")
+def productdetail(request, id):
+    footer = Footer.objects.all()
+    kategori = Kategori.objects.all()
+    detail = Urun.objects.filter(id=id)
+    c={"detail": detail,
+       "kategori": kategori,
+       "footer": footer}
+    return render(request, "home/productdetail.html", c)
 
 def colors(request):
     footer = Footer.objects.all()
