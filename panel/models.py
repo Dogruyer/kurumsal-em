@@ -51,9 +51,11 @@ class Urun(models.Model):
 class Detailfoto(models.Model):
     detail_image = models.ImageField(upload_to='images/urun/',
                                    default='images/urun/default.jpg')
+    urun_key = models.ForeignKey(Urun)
 
 class Detailfeature(models.Model):
     content = models.TextField()
+    urun_key = models.ForeignKey(Urun)
 
 class Renkler(models.Model):
     renk_image = models.ImageField(upload_to='images/renkler/',

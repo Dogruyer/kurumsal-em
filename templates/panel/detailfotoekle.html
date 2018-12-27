@@ -28,6 +28,11 @@
                                         {% for field in form %}
                                             <input type="{{field.field.widget.input_type}}" name="{{field.html_name}}" placeholder="{{field.label}}" class="form-control" />
                                             <br><br>
+                                        <select class="form-control" id = "urun_key" name = "urun_key">
+                                        {% for k in tumurunler %}
+                                            <option id = "{{k.id}}" name = "{{k.id}}" value = "{{k.id}}"> {{ k.title }} </option>
+                                         {% endfor %}
+                                        </select>
                                         {% endfor %}
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>

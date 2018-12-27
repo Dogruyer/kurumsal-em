@@ -236,6 +236,7 @@ def koleksiyonekle(request):
 def koleksiyonduzenle(request, id):
     duzenlenecek = Koleksiyonlar.objects.get(id=id)
     tumu = KoleksiyonKategori.objects.all()
+
     adi = duzenlenecek.title
     gorseli = duzenlenecek.koleksiyon_image
     content = duzenlenecek.content
@@ -245,7 +246,11 @@ def koleksiyonduzenle(request, id):
         duzenlenecek.title = request.POST["title"]
         duzenlenecek.content = request.POST["content"]
         duzenlenecek.koleksiyon_image = request.FILES["koleksiyon_image"]
-        duzenlenecek.koleksiyonkategori = request.POST["koleksiyonkategori.title "]
+
+        kategori_id = request.POST["koleksiyonkategori"]
+        kategorisi = KoleksiyonKategori.objects.get(id=kategori_id)
+
+        duzenlenecek.koleksiyonkategori = kategorisi
 
         duzenlenecek.save()
 
@@ -607,10 +612,16 @@ def detailfototablo(request):
     return render(request, "panel/detailfototablo.html", c)
 
 def detailfotoekle(request):
+    tumurunler = Urun.objects.all()
     if request.POST:
         form = YeniDetailfotoForm(request.POST, request.FILES)
+        urun_key = request.POST["urun_key"]
+        urun_nesne = Urun.objects.get(id=urun_key)
 
         if form.is_valid():
+            yeni = Detailfoto()
+            yeni.detail_image = request.FILES['detail_image']
+            yeni.urun_key = urun_nesne
             form.save()
 
             return redirect(reverse(detailfototablo))
@@ -618,6 +629,7 @@ def detailfotoekle(request):
     form = YeniDetailfotoForm()
 
     c = {"form": form,
+         "tumurunler": tumurunler,
          "request": request}
 
     c.update(csrf(request))

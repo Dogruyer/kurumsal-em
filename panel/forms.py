@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.models import ModelForm
 from .models import *
-
+from .utils import image_resizer
 
 class YeniKategoriForm(ModelForm):
     class Meta:
@@ -28,8 +28,10 @@ class YeniSliderForm(ModelForm):
 
         def save (self,user):
             yeni = Slider()
-            yeni.image = self.cleaned_data.get('slider_image')
+            yeni.slider_image = self.cleaned_data.get('slider_image')
             yeni.save()
+            image_resizer(yeni.slider_image)
+
 
 class Yenialtkategoriresimtablo(ModelForm):
     class Meta:
@@ -38,7 +40,7 @@ class Yenialtkategoriresimtablo(ModelForm):
         def save(self, user):
             yeni = Kategori()
             yeni.title = self.cleaned_data.get('title')
-            yeni.image = self.cleaned_data.get('kategori_image')
+            yeni.kategori_image = self.cleaned_data.get('kategori_image')
             yeni.save()
 
 class Yenikoleksiyontablo(ModelForm):
@@ -54,7 +56,7 @@ class Yenikarttablo(ModelForm):
         def save(self, user):
             yeni = Kartlar()
             yeni.title = self.cleaned_data.get('title')
-            yeni.image = self.cleaned_data.get('kart_image')
+            yeni.kart_image = self.cleaned_data.get('kart_image')
             yeni.save()
 
 class Yeniblogtablo(ModelForm):
@@ -65,7 +67,7 @@ class Yeniblogtablo(ModelForm):
             yeni = Blog()
             yeni.title = self.cleaned_data.get('title')
             yeni.content = self.cleaned_data.get('content')
-            yeni.image = self.cleaned_data.get('blog_image')
+            yeni.blog_image = self.cleaned_data.get('blog_image')
             yeni.save()
 
 class Yenifootertablo(ModelForm):
@@ -93,7 +95,7 @@ class Yenirenklertablo(ModelForm):
         def save(self, user):
             yeni = Renkler()
             yeni.title = self.cleaned_data.get('title')
-            yeni.image = self.cleaned_data.get('renk_image')
+            yeni.renk_image = self.cleaned_data.get('renk_image')
             yeni.save()
 
 class Yenihakkimizdatablo(ModelForm):
@@ -104,18 +106,14 @@ class Yenihakkimizdatablo(ModelForm):
             yeni = Hakkimizda()
             yeni.title = self.cleaned_data.get('title')
             yeni.title = self.cleaned_data.get('content')
-            yeni.image = self.cleaned_data.get('hakkimizda_gorsel')
-            yeni.image = self.cleaned_data.get('sayfa_gorseli')
+            yeni.hakkimizda_gorsel = self.cleaned_data.get('hakkimizda_gorsel')
+            yeni.sayfa_gorseli = self.cleaned_data.get('sayfa_gorseli')
             yeni.save()
 
 class YeniDetailfotoForm(ModelForm):
     class Meta:
         model = Detailfoto
-
-        def save (self,user):
-            yeni = Detailfoto()
-            yeni.image = self.cleaned_data.get('detail_image')
-            yeni.save()
+        exclude = ["urun_key"]
 
 class YeniDetailfeatureForm(ModelForm):
     class Meta:
