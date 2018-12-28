@@ -21,6 +21,7 @@ def slaytekle(request):
         form = YeniSliderForm(request.POST, request.FILES)
 
         if form.is_valid():
+
             form.save()
 
             return redirect(reverse(slidertablo))
@@ -622,7 +623,7 @@ def detailfotoekle(request):
             yeni = Detailfoto()
             yeni.detail_image = request.FILES['detail_image']
             yeni.urun_key = urun_nesne
-            form.save()
+            yeni.save()
 
             return redirect(reverse(detailfototablo))
 
@@ -666,17 +667,25 @@ def detailfeaturetablo(request):
     return render(request, "panel/detailfeaturetablo.html", c)
 
 def detailfeatureekle(request):
+    tumurunler = Urun.objects.all()
     if request.POST:
         form = YeniDetailfeatureForm(request.POST, request.FILES)
+        urun_key = request.POST["urun_key"]
+        urun_nesne = Urun.objects.get(id=urun_key)
 
         if form.is_valid():
-            form.save()
+            yeni = Detailfeature()
+            yeni.content = form.cleaned_data.get('content')
+            yeni.urun_key = urun_nesne
+            yeni.save()
+            yeni.save()
 
             return redirect(reverse(detailfeaturetablo))
 
     form = YeniDetailfeatureForm()
 
     c = {"form": form,
+         "tumurunler": tumurunler,
          "request": request}
 
     c.update(csrf(request))
@@ -686,16 +695,17 @@ def detailfeatureekle(request):
 def detailfeatureduzenle(request, id):
     duzenlenecek = Detailfeature.objects.get(id=id)
 
-    adi = duzenlenecek.title
+    content = duzenlenecek.content
 
     if request.POST:
-        duzenlenecek.title = request.POST["title"]
+
+        duzenlenecek.content = request.POST["content"]
 
         duzenlenecek.save()
 
         return redirect(reverse(detailfeaturetablo))
 
-    c = {"adi": adi}
+    c = {"content": content}
 
     return render(request, "panel/detailfeatureduzenle.html", c)
 

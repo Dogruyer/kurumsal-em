@@ -119,8 +119,5 @@ class YeniDetailfeatureForm(ModelForm):
     class Meta:
         model = Detailfeature
 
-        def save(self, user):
-            yeni = Detailfeature()
-            yeni.content = self.cleaned_data.get('content')
-            yeni.save()
+        exclude = ["urun_key"]
 
