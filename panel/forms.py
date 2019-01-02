@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.models import ModelForm
 from .models import *
-from .utils import image_resizer
+
 
 class YeniKategoriForm(ModelForm):
     class Meta:
@@ -25,12 +25,6 @@ class YeniKoleksiyonKategoriForm(ModelForm):
 class YeniSliderForm(ModelForm):
     class Meta:
         model = Slider
-
-        def save (self,user):
-            yeni = Slider()
-            yeni.slider_image = self.cleaned_data.get('slider_image')
-            yeni.save()
-            image_resizer(yeni.slider_image)
 
 
 class Yenialtkategoriresimtablo(ModelForm):

@@ -4,7 +4,8 @@ from django.core.urlresolvers import reverse
 from .forms import *
 from .models import *
 from django.core.context_processors import csrf
-
+from .utils import resim_bicimlendir
+import pdb
 
 def index(request):
     return render(request, "panel/index.html")
@@ -21,34 +22,26 @@ def slaytekle(request):
         form = YeniSliderForm(request.POST, request.FILES)
 
         if form.is_valid():
-
-            form.save()
-
+            yeni = Slider()
+            yeni.slider_image = form.cleaned_data.get('slider_image')
+            yeni.save()
+            resim_bicimlendir(yeni.slider_image.path, 1920, 800)
             return redirect(reverse(slidertablo))
-
     form = YeniSliderForm()
-
     c = {"form": form,
          "request": request}
-
     c.update(csrf(request))
-
     return render(request, "panel/slaytekle.html", c)
 
 def slaytduzenle(request, id):
     duzenlenecek = Slider.objects.get(id=id)
-
     gorseli = duzenlenecek.slider_image
-
     if request.POST:
         duzenlenecek.slider_image = request.FILES["slider_image"]
-
         duzenlenecek.save()
-
+        resim_bicimlendir(duzenlenecek.slider_image.path, 1920, 800)
         return redirect(reverse(slidertablo))
-
     c = {"gorseli": gorseli}
-
     return render(request, "panel/slaytduzenle.html", c)
 
 def slaytsil(request, id):
@@ -69,6 +62,7 @@ def altkategoriresimekle(request):
         form = Yenialtkategoriresimtablo(request.POST, request.FILES)
 
         if form.is_valid():
+
             form.save()
 
             return redirect(reverse(altkategoriresimtablo))

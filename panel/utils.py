@@ -1,13 +1,14 @@
-import PIL
 from PIL import Image
+from resizeimage import resizeimage
+import pdb
 from .models import *
 
+def resim_bicimlendir(resim, width, height):
+    pdb.set_trace()
+    fd_img = open(resim, 'r')
+    img = Image.open(fd_img)
+    img = resizeimage.resize_contain(img, [width, height])
+    getir = Slider.objects.get(slider_image.path = resim)
+    img.save(resim, img.format)
+    fd_img.close()
 
-def image_resizer(gorsel):
-    basewidth = 1940
-    img = Image.open(gorsel)
-    # wpercent = (basewidth / float(img.size[0]))
-    # hsize = int((float(img.size[1]) * float(wpercent)))
-    # hsize = 400
-    img = img.resize((40, 40), PIL.Image.ANTIALIAS)
-    img.save(gorsel.url)
