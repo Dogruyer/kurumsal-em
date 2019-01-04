@@ -21,48 +21,26 @@ class YeniKoleksiyonKategoriForm(ModelForm):
             yeni.title = self.cleaned_data.get('title')
             yeni.save()
 
-
 class YeniSliderForm(ModelForm):
     class Meta:
         model = Slider
 
-
 class Yenialtkategoriresimtablo(ModelForm):
     class Meta:
         model = Kategori_bolumu
-
-        def save(self, user):
-            yeni = Kategori()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.kategori_image = self.cleaned_data.get('kategori_image')
-            yeni.save()
 
 class Yenikoleksiyontablo(ModelForm):
     class Meta:
         model = Koleksiyonlar
         exclude = ["koleksiyonkategori"]
 
-
 class Yenikarttablo(ModelForm):
     class Meta:
         model = Kartlar
 
-        def save(self, user):
-            yeni = Kartlar()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.kart_image = self.cleaned_data.get('kart_image')
-            yeni.save()
-
 class Yeniblogtablo(ModelForm):
     class Meta:
         model = Blog
-
-        def save(self, user):
-            yeni = Blog()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.content = self.cleaned_data.get('content')
-            yeni.blog_image = self.cleaned_data.get('blog_image')
-            yeni.save()
 
 class Yenifootertablo(ModelForm):
     class Meta:
@@ -81,28 +59,13 @@ class Yenikategoribannertablo(ModelForm):
         model = Urun
         exclude = ["kategori_id"]
 
-
 class Yenirenklertablo(ModelForm):
     class Meta:
         model = Renkler
 
-        def save(self, user):
-            yeni = Renkler()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.renk_image = self.cleaned_data.get('renk_image')
-            yeni.save()
-
 class Yenihakkimizdatablo(ModelForm):
     class Meta:
         model = Hakkimizda
-
-        def save(self, user):
-            yeni = Hakkimizda()
-            yeni.title = self.cleaned_data.get('title')
-            yeni.title = self.cleaned_data.get('content')
-            yeni.hakkimizda_gorsel = self.cleaned_data.get('hakkimizda_gorsel')
-            yeni.sayfa_gorseli = self.cleaned_data.get('sayfa_gorseli')
-            yeni.save()
 
 class YeniDetailfotoForm(ModelForm):
     class Meta:
@@ -114,4 +77,3 @@ class YeniDetailfeatureForm(ModelForm):
         model = Detailfeature
 
         exclude = ["urun_key"]
-

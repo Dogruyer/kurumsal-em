@@ -4,8 +4,8 @@ from django.core.urlresolvers import reverse
 from .forms import *
 from .models import *
 from django.core.context_processors import csrf
-from .utils import resim_bicimlendir
-import pdb
+from .utils import image_resizer
+
 
 def index(request):
     return render(request, "panel/index.html")
@@ -25,7 +25,8 @@ def slaytekle(request):
             yeni = Slider()
             yeni.slider_image = form.cleaned_data.get('slider_image')
             yeni.save()
-            resim_bicimlendir(yeni.slider_image.path, 1920, 800)
+            image_resizer(yeni.slider_image.url, 1920,800)
+
             return redirect(reverse(slidertablo))
     form = YeniSliderForm()
     c = {"form": form,
@@ -39,7 +40,7 @@ def slaytduzenle(request, id):
     if request.POST:
         duzenlenecek.slider_image = request.FILES["slider_image"]
         duzenlenecek.save()
-        resim_bicimlendir(duzenlenecek.slider_image.path, 1920, 800)
+        image_resizer(duzenlenecek.slider_image.url, 1920, 800)
         return redirect(reverse(slidertablo))
     c = {"gorseli": gorseli}
     return render(request, "panel/slaytduzenle.html", c)
@@ -62,8 +63,10 @@ def altkategoriresimekle(request):
         form = Yenialtkategoriresimtablo(request.POST, request.FILES)
 
         if form.is_valid():
-
-            form.save()
+            yeni = Kategori_bolumu()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.kategori_image = form.cleaned_data.get('kategori_image')
+            yeni.save()
 
             return redirect(reverse(altkategoriresimtablo))
 
@@ -87,6 +90,7 @@ def altkategoriresimduzenle(request, id):
         duzenlenecek.kategori_image = request.FILES["kategori_image"]
 
         duzenlenecek.save()
+
 
         return redirect(reverse(altkategoriresimtablo))
 
@@ -215,6 +219,7 @@ def koleksiyonekle(request):
             yeni.koleksiyon_image = request.FILES['koleksiyon_image']
             yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
+            image_resizer(yeni.koleksiyon_image.url, 300, 400)
 
             return redirect(reverse(koleksiyontablo))
 
@@ -248,6 +253,7 @@ def koleksiyonduzenle(request, id):
         duzenlenecek.koleksiyonkategori = kategorisi
 
         duzenlenecek.save()
+        image_resizer(duzenlenecek.koleksiyon_image.url, 300, 400)
 
         return redirect(reverse(koleksiyontablo))
 
@@ -277,7 +283,12 @@ def kartekle(request):
         form = Yenikarttablo(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()
+            yeni = Kartlar()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.kart_image = form.cleaned_data.get('kart_image')
+            yeni.save()
+            image_resizer(yeni.kart_image.url, 570, 250)
+
 
             return redirect(reverse(karttablo))
 
@@ -301,6 +312,7 @@ def kartduzenle(request, id):
         duzenlenecek.kart_image = request.FILES["kart_image"]
 
         duzenlenecek.save()
+        image_resizer(duzenlenecek.kart_image.url, 570, 250)
 
         return redirect(reverse(karttablo))
 
@@ -327,7 +339,12 @@ def blogekle(request):
         form = Yeniblogtablo(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()
+            yeni = Blog()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.content = form.cleaned_data.get('content')
+            yeni.blog_image = form.cleaned_data.get('blog_image')
+            yeni.save()
+            image_resizer(yeni.blog_image.url, 300, 200)
 
             return redirect(reverse(blogtablo))
 
@@ -353,7 +370,7 @@ def blogduzenle(request, id):
         duzenlenecek.blog_image = request.FILES["blog_image"]
 
         duzenlenecek.save()
-
+        image_resizer(duzenlenecek.blog_image.url, 300, 200)
         return redirect(reverse(blogtablo))
 
     c = {"adi": adi,
@@ -446,6 +463,8 @@ def kategoribannerekle(request):
             yeni.urun_image = request.FILES["urun_image"]
             yeni.kategori_id = kategori_getir
             yeni.save()
+            image_resizer(yeni.urun_image.url, 300, 400)
+
 
 
             return redirect(reverse(kategoribannertablo))
@@ -473,6 +492,7 @@ def kategoribannerduzenle(request, id):
         duzenlenecek.content = request.POST["content"]
         duzenlenecek.urun_image = request.FILES["urun_image"]
         duzenlenecek.save()
+        image_resizer(duzenlenecek.urun_image.url, 300, 400)
 
         return redirect(reverse(kategoribannertablo))
     c = {"adi": adi,
@@ -500,8 +520,11 @@ def renklerekle(request):
         form = Yenirenklertablo(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()
-
+            yeni = Renkler()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.renk_image = form.cleaned_data.get('renk_image')
+            yeni.save()
+            image_resizer(yeni.renk_image.url, 300, 400)
             return redirect(reverse(renklertablo))
 
     form = Yenirenklertablo()
@@ -522,9 +545,8 @@ def renklerduzenle(request, id):
     if request.POST:
         duzenlenecek.title = request.POST["title"]
         duzenlenecek.renk_image = request.FILES["renk_image"]
-
         duzenlenecek.save()
-
+        image_resizer(duzenlenecek.renk_image.url, 300, 400)
         return redirect(reverse(renklertablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
@@ -553,7 +575,14 @@ def hakkimizdaekle(request):
         form = Yenihakkimizdatablo(request.POST, request.FILES)
 
         if form.is_valid():
-            form.save()
+            yeni = Hakkimizda()
+            yeni.title = form.cleaned_data.get('title')
+            yeni.title = form.cleaned_data.get('content')
+            yeni.hakkimizda_gorsel = form.cleaned_data.get('hakkimizda_gorsel')
+            yeni.sayfa_gorseli = form.cleaned_data.get('sayfa_gorseli')
+            yeni.save()
+            image_resizer(yeni.hakkimizda_gorsel.url, 920, 350)
+            image_resizer(yeni.sayfa_gorseli.url, 300, 400)
 
             return redirect(reverse(hakkimizdatablo))
 
@@ -581,6 +610,8 @@ def hakkimizdaduzenle(request, id):
         duzenlenecek.sayfa_gorseli = request.FILES["sayfa_gorseli"]
 
         duzenlenecek.save()
+        image_resizer(duzenlenecek.hakkimizda_gorsel.url, 920, 350)
+        image_resizer(duzenlenecek.sayfa_gorseli.url, 300, 400)
 
         return redirect(reverse(hakkimizdatablo))
 
@@ -618,6 +649,7 @@ def detailfotoekle(request):
             yeni.detail_image = request.FILES['detail_image']
             yeni.urun_key = urun_nesne
             yeni.save()
+            image_resizer(yeni.detail_image.url, 540, 700)
 
             return redirect(reverse(detailfototablo))
 
@@ -640,6 +672,7 @@ def detailfotoduzenle(request, id):
         duzenlenecek.detail_image = request.FILES["detail_image"]
 
         duzenlenecek.save()
+        image_resizer(duzenlenecek.detail_image.url, 540, 700)
 
         return redirect(reverse(detailfototablo))
 
