@@ -9,7 +9,7 @@ Index
             <div data-number="1" data-margin="100" data-loop="yes" data-navcontrol="yes" class="sofani-owl-carousel">
                 {% for i in slider %}
               <div class="slide2">
-                <div class="slide2-bg"><img src="{{STATIC_URL}}{{ i.slider_image }}"  alt="bg" height="400"/></div>
+                <div class="slide2-bg"><img src="/{{ i.slider_image }}"  alt="bg" height="400"/></div>
                 <div class="slde2-content">
                 </div>
               </div>
@@ -24,7 +24,7 @@ Index
                 <div class="col-sm-3">
                   <div class="banner-shortcode-wrap style_1">
                     <div class="banner-content title_top"><a href="#">
-                        <h3 class="banner-title">{{ besinci_banner.title }}</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:600px;" src="{{STATIC_URL}}{{ besinci_banner.kategori_image }}" alt="demo"/></a></div>
+                        <h3 class="banner-title">{{ besinci_banner.title }}</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:600px;" src="/{{ besinci_banner.kategori_image }}" alt="demo"/></a></div>
                   </div>
                 </div>
                 <div class="col-sm-9">
@@ -32,13 +32,13 @@ Index
                     <div class="col-sm-8">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">{{ dorduncu_banner.title }}</h3><span class="overlay-bg bg-df8888"></span><img style="width:570px; height:277px;" src="{{STATIC_URL}}{{ dorduncu_banner.kategori_image }}" alt="demo"/></a></div>
+                            <h3 class="banner-title">{{ dorduncu_banner.title }}</h3><span class="overlay-bg bg-df8888"></span><img style="width:570px; height:277px;" src="/{{ dorduncu_banner.kategori_image }}" alt="demo"/></a></div>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">{{ ucuncu_banner.title }}</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:285px;" src="{{STATIC_URL}}{{ ucuncu_banner.kategori_image }}" alt="demo"/></a></div>
+                            <h3 class="banner-title">{{ ucuncu_banner.title }}</h3><span class="overlay-bg bg-84deee"></span><img style="width:277px; height:285px;" src="/{{ ucuncu_banner.kategori_image }}" alt="demo"/></a></div>
                       </div>
                     </div>
                   </div>
@@ -46,12 +46,12 @@ Index
                     <div class="col-sm-4">
                       <div class="banner-shortcode-wrap style_1">
                         <div class="banner-content title_top"><a href="#">
-                            <h3 class="banner-title">{{ ikinci_banner.title }}</h3><span class="overlay-bg bg-e3c56b"></span><img style="width:277px; height:285px;" src="{{STATIC_URL}}{{ ikinci_banner.kategori_image }}" alt="demo"/></a></div>
+                            <h3 class="banner-title">{{ ikinci_banner.title }}</h3><span class="overlay-bg bg-e3c56b"></span><img style="width:277px; height:285px;" src="/{{ ikinci_banner.kategori_image }}" alt="demo"/></a></div>
                       </div>
                     </div>
                     <div class="col-sm-8">
                       <div class="banner-shortcode-wrap style_1">
-                        <div class="banner-content title_bottom"><a href="#"><img style="width:570px; height:277px;" src="{{STATIC_URL}}{{ ilk_banner.kategori_image }}" alt="demo"/>
+                        <div class="banner-content title_bottom"><a href="#"><img style="width:570px; height:277px;" src="/{{ ilk_banner.kategori_image }}" alt="demo"/>
                             <h3 class="banner-title">{{ ilk_banner.title }}</h3><span class="overlay-bg bg-e3c56b"></span></a></div>
                       </div>
                     </div>
@@ -92,8 +92,8 @@ Index
                               <div class="product-item-inner">
                                 <div class="product-thumb">
                                   <div class="product-flash-wrap"></div>
-                                  <div class="product-thumb-primary"><img style="width:300px; height:355px;" src="{{STATIC_URL}}{{ k.koleksiyon_image }}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
-                                  <div class="product-thumb-secondary"><img style="width:300px; height:350px;" src="{{STATIC_URL}}{{ k.koleksiyon_image }}" alt="38" class="attachment-shop_catalog size-shop_catalog"/></div><a href="#" class="product-link">
+                                  <div class="product-thumb-primary"><img width=300" height=400" src="/{{ k.koleksiyon_image }}" alt="41" title="41" class="attachment-shop_catalog size-shop_catalog wp-post-image"/></div>
+                                  <div class="product-thumb-secondary"><img width=300" height=400" src="/{{ k.koleksiyon_image }}" alt="38" class="attachment-shop_catalog size-shop_catalog"/></div><a href="#" class="product-link">
                                     <div class="product-hover-sign">
                                       <hr/>
                                       <hr/>
