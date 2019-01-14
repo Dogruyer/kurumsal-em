@@ -73,7 +73,6 @@ def altkategoriresimekle(request):
             image_resizer(yeni.kategori_image.url, 300, 300)
             make_watermark(yeni.kategori_image.url, yeni.kategori_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=15)
 
-
             return redirect(reverse(altkategoriresimtablo))
 
     form = Yenialtkategoriresimtablo()
@@ -98,7 +97,6 @@ def altkategoriresimduzenle(request, id):
         image_resizer(duzenlenecek.kategori_image.url, 300, 300)
         make_watermark(duzenlenecek.kategori_image.url, duzenlenecek.kategori_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=15)
 
-
         return redirect(reverse(altkategoriresimtablo))
 
     c = {"adi": adi,
@@ -111,6 +109,8 @@ def altkategoriresimsil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(altkategoriresimtablo))
+
+
 
 
 def kategoritablo(request):
@@ -207,6 +207,7 @@ def koleksiyonkategorisil(request, id):
 
 
 
+
 def koleksiyontablo(request):
     tumu = Koleksiyonlar.objects.all()
     c = {"tumu": tumu}
@@ -227,7 +228,7 @@ def koleksiyonekle(request):
             yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
             image_resizer(yeni.koleksiyon_image.url, 300, 400)
-            make_watermark(yeni.koleksiyon_image.url, yeni.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0))
+            make_watermark(yeni.koleksiyon_image.url, yeni.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
             return redirect(reverse(koleksiyontablo))
 
@@ -262,8 +263,7 @@ def koleksiyonduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.koleksiyon_image.url, 300, 400)
-        make_watermark(duzenlenecek.koleksiyon_image.url, duzenlenecek.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0))
-
+        make_watermark(duzenlenecek.koleksiyon_image.url, duzenlenecek.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(koleksiyontablo))
 
@@ -280,6 +280,7 @@ def koleksiyonsil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(koleksiyontablo))
+
 
 
 
@@ -438,7 +439,6 @@ def footerduzenle(request, id):
 
         return redirect(reverse(footertablo))
 
-
     c = {"slogan": slogan,
          "adres": adres,
          "telefon": telefon,
@@ -451,6 +451,9 @@ def footersil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(footertablo))
+
+
+
 
 
 
@@ -474,8 +477,6 @@ def kategoribannerekle(request):
             yeni.kategori_id = kategori_getir
             yeni.save()
             image_resizer(yeni.urun_image.url, 300, 400)
-
-
 
             return redirect(reverse(kategoribannertablo))
 
@@ -517,6 +518,8 @@ def kategoribannersil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(kategoribannertablo))
+
+
 
 
 
@@ -572,6 +575,8 @@ def renklersil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(renklertablo))
+
+
 
 
 
@@ -641,6 +646,8 @@ def hakkimizdasil(request, id):
 
 
 
+
+
 def detailfototablo(request):
     tumu = Detailfoto.objects.all()
     c = {"tumu": tumu}
@@ -695,6 +702,8 @@ def detailfotosil(request, id):
     duzenlenecek.delete()
 
     return redirect(reverse(detailfototablo))
+
+
 
 
 
