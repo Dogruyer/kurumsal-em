@@ -124,7 +124,7 @@ Index
               <div class="col-md-6">
                 <div class="banner-page banner-page-left">
                   <div class="banner-page-box">
-                    <figure><img style="height:328px;" src="{{STATIC_URL}}{{ i.kart_image }}" alt="banner"/></figure>
+                    <figure><img style="height:328px;" src="/{{ i.kart_image }}" alt="banner"/></figure>
                     <div class="content-hover">                    
                       <p class="banner-name">{{ i.title }}</p>
                     </div>
@@ -149,7 +149,7 @@ Index
                   {% for i in blog %}
                 <div class="blog-box">
                   <div class="blog-img">
-                    <figure><img src="{{STATIC_URL}}{{ i.blog_image }}" alt="blog" height="250"/></figure>
+                    <figure><img src="/{{ i.blog_image }}" alt="blog" height="250"/></figure>
                     <div class="blog-overlay"></div>
                   </div>
                   <div class="blog-text">

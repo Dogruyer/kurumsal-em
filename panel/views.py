@@ -299,6 +299,8 @@ def kartekle(request):
             yeni.kart_image = form.cleaned_data.get('kart_image')
             yeni.save()
             image_resizer(yeni.kart_image.url, 570, 250)
+            make_watermark(yeni.kart_image.url, yeni.kart_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
 
 
             return redirect(reverse(karttablo))
@@ -324,6 +326,7 @@ def kartduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.kart_image.url, 570, 250)
+        make_watermark(duzenlenecek.kart_image.url, duzenlenecek.kart_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(karttablo))
 
@@ -356,6 +359,8 @@ def blogekle(request):
             yeni.blog_image = form.cleaned_data.get('blog_image')
             yeni.save()
             image_resizer(yeni.blog_image.url, 300, 200)
+            make_watermark(yeni.blog_image.url, yeni.blog_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
 
             return redirect(reverse(blogtablo))
 
@@ -382,6 +387,9 @@ def blogduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.blog_image.url, 300, 200)
+        make_watermark(duzenlenecek.blog_image.url, duzenlenecek.blog_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
+
         return redirect(reverse(blogtablo))
 
     c = {"adi": adi,
