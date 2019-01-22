@@ -546,6 +546,10 @@ def renklerekle(request):
             yeni.renk_image = form.cleaned_data.get('renk_image')
             yeni.save()
             image_resizer(yeni.renk_image.url, 300, 400)
+            make_watermark(yeni.renk_image.url, yeni.renk_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
+
+
             return redirect(reverse(renklertablo))
 
     form = Yenirenklertablo()
@@ -568,6 +572,8 @@ def renklerduzenle(request, id):
         duzenlenecek.renk_image = request.FILES["renk_image"]
         duzenlenecek.save()
         image_resizer(duzenlenecek.renk_image.url, 300, 400)
+        make_watermark(duzenlenecek.renk_image.url, duzenlenecek.renk_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
         return redirect(reverse(renklertablo))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
