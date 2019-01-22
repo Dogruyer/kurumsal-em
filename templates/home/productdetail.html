@@ -25,14 +25,14 @@
               <div id="sync1" class="owl-carousel owl-template">
                 {% for i in detail %}
                 <div class="item">
-                  <figure><img src="{{MEDIA_URL}}{{ i.urun_image }}" alt="slide" width="540" height="700"/></figure>
+                  <figure><img src="/{{ i.urun_image }}" alt="slide" width="540" height="700"/></figure>
                 </div>
                 {% endfor %}
               </div>
               <div id="sync2" class="owl-carousel owl-template">
                 {% for i in detail %}
                 <div class="item">
-                  <figure><img src="{{MEDIA_URL}}{{ i.urun_image }}" alt="slide" width="180" height="220"/></figure>
+                  <figure><img src="/{{ i.urun_image }}" alt="slide" width="180" height="220"/></figure>
                 </div>
                 {% endfor %}
               </div>

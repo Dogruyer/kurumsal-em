@@ -485,6 +485,8 @@ def kategoribannerekle(request):
             yeni.kategori_id = kategori_getir
             yeni.save()
             image_resizer(yeni.urun_image.url, 300, 400)
+            make_watermark(yeni.urun_image.url, yeni.urun_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
+
 
             return redirect(reverse(kategoribannertablo))
 
@@ -505,17 +507,26 @@ def kategoribannerduzenle(request, id):
     adi = duzenlenecek.title
     content = duzenlenecek.content
     gorseli = duzenlenecek.urun_image
+    kategori = duzenlenecek.kategori_id.title
 
     if request.POST:
         duzenlenecek.title = request.POST["title"]
         duzenlenecek.content = request.POST["content"]
         duzenlenecek.urun_image = request.FILES["urun_image"]
+
+        kategorisi_ = request.POST["kategori_id"]
+        kategorisi = Urun.objects.get(id=kategorisi_)
+
+        duzenlenecek.Urun = kategorisi
+
         duzenlenecek.save()
         image_resizer(duzenlenecek.urun_image.url, 300, 400)
+        make_watermark(duzenlenecek.urun_image.url, duzenlenecek.urun_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(kategoribannertablo))
     c = {"adi": adi,
          "kategori": kategori,
+         "tumkategoriler": tumkategoriler,
          "gorseli": gorseli,
          "content": content}
 
