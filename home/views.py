@@ -59,8 +59,13 @@ def shop(request, id):
 def productdetail(request, id):
     footer = Footer.objects.all()
     kategori = Kategori.objects.all()
-    detail = Urun.objects.filter(id=id)
-    c={"detail": detail,
+    urun = Urun.objects.filter(id=id)
+    tumu = Detailfoto.objects.all()
+    feature = Detailfeature.objects.all()
+
+    c={"urun": urun,
+       "feature": feature,
+       "tumu" : tumu,
        "kategori": kategori,
        "footer": footer}
     return render(request, "home/productdetail.html", c)

@@ -26,7 +26,6 @@ def slaytekle(request):
             yeni.slider_image = form.cleaned_data.get('slider_image')
             yeni.save()
             image_resizer(yeni.slider_image.url, 1920,800)
-            make_watermark(yeni.slider_image.url, yeni.slider_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=40)
 
             return redirect(reverse(slidertablo))
     form = YeniSliderForm()
@@ -42,7 +41,6 @@ def slaytduzenle(request, id):
         duzenlenecek.slider_image = request.FILES["slider_image"]
         duzenlenecek.save()
         image_resizer(duzenlenecek.slider_image.url, 1920, 800)
-        make_watermark(duzenlenecek.slider_image.url, duzenlenecek.slider_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=40)
 
         return redirect(reverse(slidertablo))
     c = {"gorseli": gorseli}
@@ -70,8 +68,6 @@ def altkategoriresimekle(request):
             yeni.title = form.cleaned_data.get('title')
             yeni.kategori_image = form.cleaned_data.get('kategori_image')
             yeni.save()
-            image_resizer(yeni.kategori_image.url, 300, 300)
-            make_watermark(yeni.kategori_image.url, yeni.kategori_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=15)
 
             return redirect(reverse(altkategoriresimtablo))
 
@@ -94,8 +90,6 @@ def altkategoriresimduzenle(request, id):
         duzenlenecek.title = request.POST["title"]
         duzenlenecek.kategori_image = request.FILES["kategori_image"]
         duzenlenecek.save()
-        image_resizer(duzenlenecek.kategori_image.url, 300, 300)
-        make_watermark(duzenlenecek.kategori_image.url, duzenlenecek.kategori_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=15)
 
         return redirect(reverse(altkategoriresimtablo))
 
@@ -228,7 +222,6 @@ def koleksiyonekle(request):
             yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
             image_resizer(yeni.koleksiyon_image.url, 300, 400)
-            make_watermark(yeni.koleksiyon_image.url, yeni.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
             return redirect(reverse(koleksiyontablo))
 
@@ -263,7 +256,6 @@ def koleksiyonduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.koleksiyon_image.url, 300, 400)
-        make_watermark(duzenlenecek.koleksiyon_image.url, duzenlenecek.koleksiyon_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(koleksiyontablo))
 
@@ -299,9 +291,6 @@ def kartekle(request):
             yeni.kart_image = form.cleaned_data.get('kart_image')
             yeni.save()
             image_resizer(yeni.kart_image.url, 570, 250)
-            make_watermark(yeni.kart_image.url, yeni.kart_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
-
-
 
             return redirect(reverse(karttablo))
 
@@ -326,8 +315,6 @@ def kartduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.kart_image.url, 570, 250)
-        make_watermark(duzenlenecek.kart_image.url, duzenlenecek.kart_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
-
         return redirect(reverse(karttablo))
 
     c = {"adi": adi,
@@ -359,7 +346,6 @@ def blogekle(request):
             yeni.blog_image = form.cleaned_data.get('blog_image')
             yeni.save()
             image_resizer(yeni.blog_image.url, 300, 200)
-            make_watermark(yeni.blog_image.url, yeni.blog_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
 
             return redirect(reverse(blogtablo))
@@ -387,8 +373,6 @@ def blogduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.blog_image.url, 300, 200)
-        make_watermark(duzenlenecek.blog_image.url, duzenlenecek.blog_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
-
 
         return redirect(reverse(blogtablo))
 
@@ -485,7 +469,6 @@ def kategoribannerekle(request):
             yeni.kategori_id = kategori_getir
             yeni.save()
             image_resizer(yeni.urun_image.url, 300, 400)
-            make_watermark(yeni.urun_image.url, yeni.urun_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
 
             return redirect(reverse(kategoribannertablo))
@@ -521,7 +504,6 @@ def kategoribannerduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.urun_image.url, 300, 400)
-        make_watermark(duzenlenecek.urun_image.url, duzenlenecek.urun_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(kategoribannertablo))
     c = {"adi": adi,
@@ -557,7 +539,6 @@ def renklerekle(request):
             yeni.renk_image = form.cleaned_data.get('renk_image')
             yeni.save()
             image_resizer(yeni.renk_image.url, 300, 400)
-            make_watermark(yeni.renk_image.url, yeni.renk_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
 
 
@@ -583,7 +564,6 @@ def renklerduzenle(request, id):
         duzenlenecek.renk_image = request.FILES["renk_image"]
         duzenlenecek.save()
         image_resizer(duzenlenecek.renk_image.url, 300, 400)
-        make_watermark(duzenlenecek.renk_image.url, duzenlenecek.renk_image.url, text="www.ekipmobilya.com.tr", pos=(0, 0), font=20)
 
         return redirect(reverse(renklertablo))
 
@@ -691,7 +671,6 @@ def detailfotoekle(request):
             yeni.detail_image = request.FILES['detail_image']
             yeni.urun_key = urun_nesne
             yeni.save()
-            image_resizer(yeni.detail_image.url, 540, 700)
 
             return redirect(reverse(detailfototablo))
 
@@ -714,7 +693,6 @@ def detailfotoduzenle(request, id):
         duzenlenecek.detail_image = request.FILES["detail_image"]
 
         duzenlenecek.save()
-        image_resizer(duzenlenecek.detail_image.url, 540, 700)
 
         return redirect(reverse(detailfototablo))
 
