@@ -27,7 +27,7 @@ def slaytekle(request):
             yeni.save()
             image_resizer(yeni.slider_image.url, 1920,800)
 
-            return redirect(reverse(slidertablo))
+            return redirect(reverse(index))
     form = YeniSliderForm()
     c = {"form": form,
          "request": request}
@@ -42,7 +42,7 @@ def slaytduzenle(request, id):
         duzenlenecek.save()
         image_resizer(duzenlenecek.slider_image.url, 1920, 800)
 
-        return redirect(reverse(slidertablo))
+        return redirect(reverse(index))
     c = {"gorseli": gorseli}
     return render(request, "panel/slaytduzenle.html", c)
 
@@ -69,7 +69,7 @@ def altkategoriresimekle(request):
             yeni.kategori_image = form.cleaned_data.get('kategori_image')
             yeni.save()
 
-            return redirect(reverse(altkategoriresimtablo))
+            return redirect(reverse(index))
 
     form = Yenialtkategoriresimtablo()
 
@@ -91,7 +91,7 @@ def altkategoriresimduzenle(request, id):
         duzenlenecek.kategori_image = request.FILES["kategori_image"]
         duzenlenecek.save()
 
-        return redirect(reverse(altkategoriresimtablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi,
          "gorseli": gorseli}
@@ -119,7 +119,7 @@ def kategoriekle(request):
         if form.is_valid():
             form.save()
 
-            return redirect(reverse(kategoritablo))
+            return redirect(reverse(index))
 
     form = YeniKategoriForm()
 
@@ -140,7 +140,7 @@ def kategoriduzenle(request, id):
 
         duzenlenecek.save()
 
-        return redirect(reverse(kategoritablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi}
 
@@ -166,7 +166,7 @@ def koleksiyonkategoriekle(request):
         if form.is_valid():
             form.save()
 
-            return redirect(reverse(koleksiyonkategoritablo))
+            return redirect(reverse(index))
 
     form = YeniKoleksiyonKategoriForm()
 
@@ -187,7 +187,7 @@ def koleksiyonkategoriduzenle(request, id):
 
         duzenlenecek.save()
 
-        return redirect(reverse(koleksiyonkategoritablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi}
 
@@ -223,7 +223,7 @@ def koleksiyonekle(request):
             yeni.save()
             image_resizer(yeni.koleksiyon_image.url, 300, 400)
 
-            return redirect(reverse(koleksiyontablo))
+            return redirect(reverse(index))
 
     form = Yenikoleksiyontablo()
 
@@ -257,7 +257,7 @@ def koleksiyonduzenle(request, id):
         duzenlenecek.save()
         image_resizer(duzenlenecek.koleksiyon_image.url, 300, 400)
 
-        return redirect(reverse(koleksiyontablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi,
          "gorseli": gorseli,
@@ -292,7 +292,7 @@ def kartekle(request):
             yeni.save()
             image_resizer(yeni.kart_image.url, 570, 250)
 
-            return redirect(reverse(karttablo))
+            return redirect(reverse(index))
 
     form = Yenikarttablo()
 
@@ -315,7 +315,7 @@ def kartduzenle(request, id):
 
         duzenlenecek.save()
         image_resizer(duzenlenecek.kart_image.url, 570, 250)
-        return redirect(reverse(karttablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi,
          "gorseli": gorseli}
@@ -348,7 +348,7 @@ def blogekle(request):
             image_resizer(yeni.blog_image.url, 300, 200)
 
 
-            return redirect(reverse(blogtablo))
+            return redirect(reverse(index))
 
     form = Yeniblogtablo()
 
@@ -374,7 +374,7 @@ def blogduzenle(request, id):
         duzenlenecek.save()
         image_resizer(duzenlenecek.blog_image.url, 300, 200)
 
-        return redirect(reverse(blogtablo))
+        return redirect(reverse(index))
 
     c = {"adi": adi,
          "gorseli": gorseli,
@@ -402,7 +402,7 @@ def footerekle(request):
         if form.is_valid():
             form.save()
 
-            return redirect(reverse(footertablo))
+            return redirect(reverse(index))
 
     form = Yenifootertablo()
 
@@ -429,7 +429,7 @@ def footerduzenle(request, id):
 
         duzenlenecek.save()
 
-        return redirect(reverse(footertablo))
+        return redirect(reverse(index))
 
     c = {"slogan": slogan,
          "adres": adres,
@@ -471,7 +471,7 @@ def kategoribannerekle(request):
             image_resizer(yeni.urun_image.url, 300, 400)
 
 
-            return redirect(reverse(kategoribannertablo))
+            return redirect(reverse(index))
 
     form = Yenikategoribannertablo()
 
@@ -505,7 +505,7 @@ def kategoribannerduzenle(request, id):
         duzenlenecek.save()
         image_resizer(duzenlenecek.urun_image.url, 300, 400)
 
-        return redirect(reverse(kategoribannertablo))
+        return redirect(reverse(index))
     c = {"adi": adi,
          "kategori": kategori,
          "tumkategoriler": tumkategoriler,
@@ -542,7 +542,7 @@ def renklerekle(request):
 
 
 
-            return redirect(reverse(renklertablo))
+            return redirect(reverse(index))
 
     form = Yenirenklertablo()
 
@@ -565,7 +565,7 @@ def renklerduzenle(request, id):
         duzenlenecek.save()
         image_resizer(duzenlenecek.renk_image.url, 300, 400)
 
-        return redirect(reverse(renklertablo))
+        return redirect(reverse(index))
 
     # form = YeniBannerForm(initial={'title': duzenlenecek.title,
     #                                'banner_image': duzenlenecek.banner_image})
@@ -604,7 +604,7 @@ def hakkimizdaekle(request):
             image_resizer(yeni.hakkimizda_gorsel.url, 920, 350)
             image_resizer(yeni.sayfa_gorseli.url, 300, 400)
 
-            return redirect(reverse(hakkimizdatablo))
+            return redirect(reverse(index))
 
     form = Yenihakkimizdatablo()
 
@@ -633,7 +633,7 @@ def hakkimizdaduzenle(request, id):
         image_resizer(duzenlenecek.hakkimizda_gorsel.url, 920, 350)
         image_resizer(duzenlenecek.sayfa_gorseli.url, 300, 400)
 
-        return redirect(reverse(hakkimizdatablo))
+        return redirect(reverse(index))
 
 
     c = {"title": title,
@@ -672,7 +672,7 @@ def detailfotoekle(request):
             yeni.urun_key = urun_nesne
             yeni.save()
 
-            return redirect(reverse(detailfototablo))
+            return redirect(reverse(index))
 
     form = YeniDetailfotoForm()
 
@@ -694,7 +694,7 @@ def detailfotoduzenle(request, id):
 
         duzenlenecek.save()
 
-        return redirect(reverse(detailfototablo))
+        return redirect(reverse(index))
 
     c = {"gorseli": gorseli}
 
@@ -729,7 +729,7 @@ def detailfeatureekle(request):
             yeni.save()
             yeni.save()
 
-            return redirect(reverse(detailfeaturetablo))
+            return redirect(reverse(index))
 
     form = YeniDetailfeatureForm()
 
@@ -752,7 +752,7 @@ def detailfeatureduzenle(request, id):
 
         duzenlenecek.save()
 
-        return redirect(reverse(detailfeaturetablo))
+        return redirect(reverse(index))
 
     c = {"content": content}
 
