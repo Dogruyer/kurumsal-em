@@ -60,8 +60,8 @@ def productdetail(request, id):
     footer = Footer.objects.all()
     kategori = Kategori.objects.all()
     urun = Urun.objects.filter(id=id)
-    tumu = Detailfoto.objects.all()
-    feature = Detailfeature.objects.all()
+    tumu = Detailfoto.objects.filter(urun_key=id)
+    feature = Detailfeature.objects.filter(urun_key=id)
 
     c={"urun": urun,
        "feature": feature,

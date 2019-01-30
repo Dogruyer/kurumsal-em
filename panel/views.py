@@ -221,7 +221,6 @@ def koleksiyonekle(request):
             yeni.koleksiyon_image = request.FILES['koleksiyon_image']
             yeni.koleksiyonkategori = kategori_nesne
             yeni.save()
-            image_resizer(yeni.koleksiyon_image.url, 300, 400)
 
             return redirect(reverse(index))
 
@@ -255,7 +254,6 @@ def koleksiyonduzenle(request, id):
         duzenlenecek.koleksiyonkategori = kategorisi
 
         duzenlenecek.save()
-        image_resizer(duzenlenecek.koleksiyon_image.url, 300, 400)
 
         return redirect(reverse(index))
 
